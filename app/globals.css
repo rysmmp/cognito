@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Material Design 3 — baseline dark color scheme (purple seed)
+   https://m3.material.io/styles/color/roles
+   ============================================================ */
+:root {
+  /* Primary */
+  --md-primary: #d0bcff;
+  --md-on-primary: #381e72;
+  --md-primary-container: #4f378b;
+  --md-on-primary-container: #eaddff;
+
+  /* Secondary */
+  --md-secondary: #ccc2dc;
+  --md-on-secondary: #332d41;
+  --md-secondary-container: #4a4458;
+  --md-on-secondary-container: #e8def8;
+
+  /* Tertiary */
+  --md-tertiary: #efb8c8;
+  --md-on-tertiary: #492532;
+  --md-tertiary-container: #633b48;
+  --md-on-tertiary-container: #ffd8e4;
+
+  /* Error */
+  --md-error: #f2b8b5;
+  --md-on-error: #601410;
+  --md-error-container: #8c1d18;
+  --md-on-error-container: #f9dedc;
+
+  /* Surfaces & background */
+  --md-background: #141218;
+  --md-on-background: #e6e1e9;
+  --md-surface: #141218;
+  --md-on-surface: #e6e1e9;
+  --md-surface-variant: #49454f;
+  --md-on-surface-variant: #cac4d0;
+
+  /* Tonal surface containers (elevation by color) */
+  --md-surface-container-lowest: #0f0d13;
+  --md-surface-container-low: #1d1b20;
+  --md-surface-container: #211f26;
+  --md-surface-container-high: #2b2930;
+  --md-surface-container-highest: #36343b;
+
+  /* Outline */
+  --md-outline: #938f99;
+  --md-outline-variant: #49454f;
+
+  /* Inverse */
+  --md-inverse-surface: #e6e1e9;
+  --md-inverse-on-surface: #322f35;
+  --md-inverse-primary: #6750a4;
+
+  /* Highlight applied to scenario text on reveal (primary-container tone) */
+  --md-highlight: rgba(208, 188, 255, 0.22);
+
+  /* Elevation shadows (M3 dark) */
+  --md-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --md-elevation-2: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --md-elevation-3: 0 4px 8px 3px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--md-background);
+    color: var(--md-on-surface);
+    font-family: var(--font-sans), Roboto, system-ui, sans-serif;
+    font-weight: 400;
+  }
+
+  ::selection {
+    background-color: var(--md-highlight);
+    color: var(--md-on-surface);
+  }
+
+  /* M3 focus indicator */
+  :focus-visible {
+    outline: 2px solid var(--md-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* Elevation utilities */
+  .md-elevation-1 {
+    box-shadow: var(--md-elevation-1);
+  }
+  .md-elevation-2 {
+    box-shadow: var(--md-elevation-2);
+  }
+  .md-elevation-3 {
+    box-shadow: var(--md-elevation-3);
+  }
+
+  /* M3 state layer: an overlay of the element's "on" color (currentColor),
+     8% on hover, 12% on press. Apply `md-state` to any interactive surface. */
+  .md-state {
+    position: relative;
+    isolation: isolate;
+  }
+  .md-state::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: currentColor;
+    opacity: 0;
+    transition: opacity 150ms cubic-bezier(0.2, 0, 0, 1);
+    pointer-events: none;
+  }
+  .md-state:hover::after {
+    opacity: 0.08;
+  }
+  .md-state:focus-visible::after {
+    opacity: 0.1;
+  }
+  .md-state:active::after {
+    opacity: 0.12;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
