@@ -1,0 +1,122 @@
+[
+  {
+    "id": "elevator-man",
+    "type": "puzzle",
+    "scenario": "A man lives on the 10th floor of an apartment building. Every morning he takes the elevator all the way down to the lobby and goes to work. When he comes home, he rides the elevator to the 7th floor and walks the stairs the rest of the way — every day. Except on rainy days, when he rides all the way to the 10th. And except when someone else is in the elevator with him. Why?",
+    "highlights": ["7th floor and walks", "rainy days", "someone else is in the elevator"],
+    "model": {
+      "name": "He is too short to reach the button",
+      "short_definition": "The man can only reach the 7th-floor button. On rainy days he uses his umbrella to press the 10th; with company, he just asks them.",
+      "what_it_is": "The man is very short. Going down he can reach the lobby button easily, but going up he can only stretch to the button for the 7th floor. On rainy days he carries an umbrella and uses it to poke the 10th-floor button; when someone else is in the elevator, he simply asks them to press it for him.",
+      "why_it_matters": "It is the classic lateral-thinking puzzle because every detail nudges you toward elaborate theories — exercise, an affair, a secret — when the real constraint is mundane and physical. Lateral puzzles train you to question the assumption you didn't notice you made: here, that the man can reach every button.",
+      "examples": ["The umbrella matters because it extends his reach", "A child would behave exactly the same way", "Every exception (rain, company) points to the same single cause"],
+      "common_misuse": "Assuming the behavior must be a deliberate choice — a workout, a habit, meeting someone on the 7th floor. The puzzle works by hiding a physical limitation behind apparently intentional behavior."
+    },
+    "tags": ["lateral thinking", "classic", "assumptions", "puzzle"]
+  },
+  {
+    "id": "parachute-field",
+    "type": "puzzle",
+    "scenario": "A man is found lying dead in the middle of an empty field. There is nothing else in the field except an unopened package lying next to him. There are no footprints, no tracks, and no other people for miles around. How did he die?",
+    "highlights": ["empty field", "unopened package", "no footprints"],
+    "model": {
+      "name": "His parachute failed to open",
+      "short_definition": "The man jumped from a plane; the unopened package beside him is his parachute, which never deployed.",
+      "what_it_is": "The man was skydiving — or bailing out of a failing plane — and jumped. The unopened package next to him is his parachute, which failed to open. That also explains the absence of footprints or tracks: he arrived from above, not across the ground.",
+      "why_it_matters": "The puzzle exploits the words 'package' and 'field' to keep your search on the ground. Lateral thinking means widening the search space — literally, here, looking up. Strong problem-solvers habitually ask, 'what dimension am I ignoring?'",
+      "examples": ["'No footprints' is the key clue — he didn't walk there", "An 'unopened package' is a parachute by another name", "Some versions use a 'broken match' as the ripcord"],
+      "common_misuse": "Fixating on poison, murder, or what is inside the package. The trick is that the package causes the death by what it failed to do, not by its contents."
+    },
+    "tags": ["lateral thinking", "classic", "reframing", "puzzle"]
+  },
+  {
+    "id": "romeo-juliet-fish",
+    "type": "puzzle",
+    "scenario": "Romeo and Juliet are found dead on the floor of a locked room. They are lying in a puddle of water surrounded by pieces of broken glass. The doors and windows were locked from the inside, and nobody else was in the room. What happened?",
+    "highlights": ["puddle of water", "broken glass", "locked from the inside"],
+    "model": {
+      "name": "They are fish",
+      "short_definition": "Romeo and Juliet are pet fish. Their bowl was knocked over and shattered, leaving them on the floor in the spilled water.",
+      "what_it_is": "Romeo and Juliet are not people — they are pet fish. Their glass bowl fell, perhaps knocked by a cat or a draft, and shattered, spilling the water and the fish onto the floor where they died. The locked room is a red herring.",
+      "why_it_matters": "The names trigger a powerful assumption — two humans, a tragedy — that frames everything after it. Puzzles like this show how a single label can lock your entire interpretation. The skill is noticing and dropping the unstated premise.",
+      "examples": ["A cat is the usual culprit in the full version", "The 'locked room' detail exists only to mislead you", "Swap the names and the puzzle becomes trivial"],
+      "common_misuse": "Treating it as a locked-room murder mystery. The locked door is a distraction; the real move is questioning who Romeo and Juliet actually are."
+    },
+    "tags": ["lateral thinking", "classic", "assumptions", "puzzle"]
+  },
+  {
+    "id": "monopoly-bankrupt",
+    "type": "puzzle",
+    "scenario": "A man pushes his car up to a hotel, and the moment he arrives he knows he is bankrupt. He doesn't seem upset, and no money ever changes hands. What is going on?",
+    "highlights": ["pushes his car", "hotel", "bankrupt"],
+    "model": {
+      "name": "He is playing Monopoly",
+      "short_definition": "He is playing Monopoly. His car-shaped token landed on a property with a hotel whose rent he can't pay.",
+      "what_it_is": "The man is playing the board game Monopoly. He moves his car-shaped token onto a property where an opponent has built a hotel, and the rent is more than he has left — so he is bankrupt. He 'pushes' the car because it is a game piece, and no real money is involved.",
+      "why_it_matters": "Every word is literally true but primed to evoke a real car, a real hotel, and real financial ruin. The puzzle rewards stepping back to ask whether the scene might be a game, a story, or a metaphor rather than literal reality.",
+      "examples": ["'Pushes his car' is strange for a real car — that's the tell", "Other versions use a thimble or a top hat as the token", "His calm reaction signals the stakes aren't real"],
+      "common_misuse": "Imagining an actual financial collapse and inventing a backstory. The clue is the odd physical detail — pushing the car — that only makes sense for a game token."
+    },
+    "tags": ["lateral thinking", "classic", "reframing", "puzzle"]
+  },
+  {
+    "id": "hiccups-cure",
+    "type": "puzzle",
+    "scenario": "A man walks into a bar and asks the bartender for a glass of water. The bartender reaches under the counter, pulls out a gun, and points it straight at him. The man pauses, says 'thank you,' and walks out happy. Neither of them is angry. Why?",
+    "highlights": ["glass of water", "pulls out a gun", "thank you"],
+    "model": {
+      "name": "He had the hiccups",
+      "short_definition": "The man had hiccups and wanted water to cure them. The bartender cured them faster — by giving him a fright.",
+      "what_it_is": "The man came in with the hiccups and asked for water to get rid of them. The bartender realized this and chose a quicker cure: startling him with the gun. The shock cured the hiccups, so the man no longer needed the water — hence the genuine 'thank you.'",
+      "why_it_matters": "The gun makes you assume threat and conflict. The resolution requires linking two seemingly unrelated facts — the request for water and the sudden scare — through a hidden shared goal. That is the heart of lateral thinking: finding the connection the surface story conceals.",
+      "examples": ["Water and a sudden scare are both folk cures for hiccups", "The 'thank you' is the clue that nothing hostile happened", "Notice the man never actually drinks anything"],
+      "common_misuse": "Reading it as a robbery, a threat, or a secret signal between criminals. The trick is asking why someone would be grateful to have a gun pointed at them."
+    },
+    "tags": ["lateral thinking", "classic", "connection", "puzzle"]
+  },
+  {
+    "id": "footsteps-riddle",
+    "type": "puzzle",
+    "scenario": "Whatever road you walk, I follow — yet I am always behind you and never ahead. The more of me you take, the more I leave behind. I cost nothing and weigh nothing. What am I?",
+    "highlights": ["the more of me you take", "the more I leave behind", "behind you and never ahead"],
+    "model": {
+      "name": "Footsteps",
+      "short_definition": "Footsteps. The more steps you take, the more footprints you leave behind you.",
+      "what_it_is": "The answer is footsteps, or footprints. Each step you 'take' is also one you leave behind you — so taking more leaves more behind. They trail you and never go ahead, and they cost and weigh nothing.",
+      "why_it_matters": "Classic riddles describe something familiar in unfamiliar, slightly paradoxical terms ('take more, leave more'). Solving them rewards a vocabulary of metaphor and a willingness to read a word like 'take' in two senses at once — playful, divergent thinking.",
+      "examples": ["'Take a step' and 'leave a print' describe one action", "Related riddle: 'What must be broken before you can use it?' — an egg", "The paradox (take equals leave) is the signature of the answer"],
+      "common_misuse": "Hunting for a single physical object you carry. The wordplay hinges on 'take' meaning to make a step, not to grab or remove something."
+    },
+    "tags": ["riddle", "wordplay", "classic", "puzzle"]
+  },
+  {
+    "id": "echo-riddle",
+    "type": "puzzle",
+    "scenario": "I speak without a mouth and hear without ears. I have no body, but I come alive with a shout in the right place. The more open space there is around me, the louder I answer. What am I?",
+    "highlights": ["speak without a mouth", "come alive with a shout", "the louder I answer"],
+    "model": {
+      "name": "An echo",
+      "short_definition": "An echo. It repeats sound without a mouth or ears and grows in spaces that reflect sound — canyons, empty halls.",
+      "what_it_is": "The answer is an echo. It 'speaks' by repeating sounds though it has no mouth, 'hears' by responding to them though it has no ears, and has no body of its own. It is strongest in large, hard-walled spaces that reflect sound back to you.",
+      "why_it_matters": "Riddles personify abstractions — sound, time, shadows — and ask you to recognize them by their behavior rather than their substance. That is a small but real exercise in thinking about processes, not just objects.",
+      "examples": ["'Speak without a mouth' fits sound being reflected back", "Related: 'What has a neck but no head?' — a bottle", "Canyons and empty rooms produce the strongest echoes"],
+      "common_misuse": "Guessing 'wind,' 'a ghost,' or 'a thought.' The decisive clue is that it answers louder where there is more space to reflect — a property unique to an echo."
+    },
+    "tags": ["riddle", "wordplay", "classic", "puzzle"]
+  },
+  {
+    "id": "three-light-switches",
+    "type": "puzzle",
+    "scenario": "You stand outside a closed room with three on/off switches. Exactly one of them controls the single light bulb inside; the other two do nothing. You may flip the switches as much as you like, but you can open the door and enter the room only once. How do you work out which switch controls the bulb?",
+    "highlights": ["three on/off switches", "enter the room only once", "which switch controls the bulb"],
+    "model": {
+      "name": "Use heat, not just light",
+      "short_definition": "Turn on switch 1 for a few minutes, switch it off, turn on switch 2, then enter: lit means 2, off-but-warm means 1, off-and-cold means 3.",
+      "what_it_is": "Turn on the first switch and leave it for several minutes. Then turn it off and turn on the second switch. Now enter. If the bulb is lit, it is the second switch. If it is off but warm to the touch, it is the first switch. If it is off and cold, it is the third. You have used a second variable — heat — to get two pieces of information from one look.",
+      "why_it_matters": "Unlike the others, this is a true logic puzzle, and its lesson is concrete: when one channel of information isn't enough, find a second one you've been ignoring. The bulb stores not only light but heat — a resource the naive framing overlooks.",
+      "examples": ["The trick is realizing a bulb keeps a 'memory' as heat", "It generalizes: look for a hidden second variable", "With four switches and two visits, the same idea scales"],
+      "common_misuse": "Assuming you can only learn from whether the light is on or off — that is one bit of information, not enough to distinguish three switches in a single visit. The heat of the bulb is the overlooked extra signal."
+    },
+    "tags": ["logic puzzle", "lateral thinking", "classic", "puzzle"]
+  }
+]

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import type { Scenario } from "@/lib/types";
@@ -13,9 +14,15 @@ import { DetailDrawer } from "./DetailDrawer";
 import { SaveButton } from "./SaveButton";
 import { ScreenshotButton } from "./ScreenshotButton";
 import { ScreenshotTarget } from "./ScreenshotTarget";
+import type { RevealLabels } from "./RevealButton";
+import { Ripple } from "./ui/Ripple";
 
 interface ScenarioCardProps {
   scenario: Scenario;
+  /** Advance to the next scenario (the bottom button in the action stack). */
+  onNext: () => void;
+  /** Override the reveal-button labels (e.g. "Reveal the answer" for riddles). */
+  revealLabels?: RevealLabels;
 }
 
 /**
@@ -23,7 +30,7 @@ interface ScenarioCardProps {
  * and the save / screenshot actions. Reveal state lives here; remount via a
  * `key` on the scenario id to reset it when navigating.
  */
-export function ScenarioCard({ scenario }: ScenarioCardProps) {
+export function ScenarioCard({ scenario, onNext, revealLabels }: ScenarioCardProps) {
   const { revealState, advance, atLeast } = useReveal();
   const shotRef = useRef<HTMLDivElement>(null);
 
@@ -52,7 +59,11 @@ export function ScenarioCard({ scenario }: ScenarioCardProps) {
         {/* RIGHT — reveal, model, actions, details */}
         <div className="mt-7 lg:mt-0 lg:w-[320px] lg:shrink-0 lg:border-l lg:border-outline-variant lg:pl-10">
           {revealState !== "full" && (
-            <RevealButton revealState={revealState} onAdvance={advance} />
+            <RevealButton
+              revealState={revealState}
+              onAdvance={advance}
+              labels={revealLabels}
+            />
           )}
 
           {revealed && (
@@ -69,7 +80,7 @@ export function ScenarioCard({ scenario }: ScenarioCardProps) {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="mt-6 flex flex-wrap justify-end gap-3 max-sm:justify-stretch lg:justify-start"
+              className="mt-6 flex flex-col gap-3"
             >
               <SaveButton scenario={scenario} />
               <ScreenshotButton
@@ -80,6 +91,21 @@ export function ScenarioCard({ scenario }: ScenarioCardProps) {
           )}
 
           <DetailDrawer model={scenario.model} visible={revealState === "full"} />
+
+          {/* Bottom of the action stack: advance to the next scenario. Same M3
+              pill shape (rounded-full, h-10, label-large) as the other CTAs,
+              distinguished only by its filled primary-container tone. */}
+          <button
+            type="button"
+            onClick={onNext}
+            className="md-state relative mt-6 inline-flex h-10 w-full items-center justify-center gap-2 overflow-hidden rounded-md-full bg-primary-container px-6 font-sans text-label-large font-medium text-on-primary-container transition-[background-color,box-shadow] duration-150 ease-md-standard"
+          >
+            <Ripple />
+            <span className="relative z-[1] inline-flex items-center gap-2">
+              <ArrowRight className="h-[18px] w-[18px]" />
+              Next scenario
+            </span>
+          </button>
         </div>
       </div>
 

@@ -25,7 +25,7 @@ export function ScreenshotButton({ targetRef, filename }: ScreenshotButtonProps)
   };
 
   return (
-    <Button variant="outlined" onClick={onClick} disabled={busy}>
+    <Button variant="outlined" onClick={onClick} disabled={busy} className="w-full">
       {busy ? <Loader2 className="animate-spin" /> : <Download />}
       {busy ? "Saving…" : "Save image"}
     </Button>

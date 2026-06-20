@@ -36,6 +36,7 @@ export function SaveButton({ scenario }: SaveButtonProps) {
         variant={saved ? "tonal" : "outlined"}
         onClick={onClick}
         aria-pressed={saved}
+        className="w-full"
       >
         {saved ? <BookmarkCheck /> : <Bookmark />}
         {saved ? "Saved" : "Save"}

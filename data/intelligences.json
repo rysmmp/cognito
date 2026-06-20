@@ -1,0 +1,122 @@
+[
+  {
+    "id": "linguistic-intelligence",
+    "type": "real_world",
+    "scenario": "A child who struggles with math homework spends hours inventing elaborate bedtime stories, plays with rhymes and puns constantly, and picks up a second language from a few months of cartoons. A teacher labels her average based on test scores. Years later she becomes a celebrated novelist.",
+    "highlights": ["inventing elaborate bedtime stories", "picks up a second language", "average"],
+    "model": {
+      "name": "Linguistic Intelligence",
+      "short_definition": "Sensitivity to spoken and written language — the capacity to learn, use, and play with words to express and grasp meaning.",
+      "what_it_is": "Linguistic intelligence is the ability to use language effectively — to persuade, remember, explain, or delight — along with sensitivity to the sound, rhythm, meaning, and function of words. In Howard Gardner's theory of multiple intelligences, it is one of several relatively independent human capacities.",
+      "why_it_matters": "Schooling and standardized tests lean heavily on linguistic ability, so it often gets mistaken for general intelligence. Recognizing it as one capacity among many explains why someone can be verbally gifted yet struggle elsewhere — or be unremarkable on paper yet brilliant in another domain.",
+      "examples": ["Writers and poets who find the exact word for a feeling", "Lawyers and debaters who construct persuasive arguments", "People who pick up new languages quickly and love wordplay"],
+      "common_misuse": "Treating linguistic fluency as proof of overall intelligence. Articulate people can be wrong, and inarticulate people can be deeply capable. Gardner's framework itself is debated by psychologists — treat it as a useful lens, not a measured fact."
+    },
+    "tags": ["multiple intelligences", "language", "Howard Gardner", "learning"]
+  },
+  {
+    "id": "logical-mathematical-intelligence",
+    "type": "thought_experiment",
+    "scenario": "Two students see the same magic trick. One enjoys the wonder and moves on. The other cannot let it go — she starts mapping out what must be true at each step, eliminating impossible explanations one by one, and by morning has reverse-engineered the method from first principles. No one taught her to do this.",
+    "highlights": ["what must be true", "eliminating impossible explanations", "reverse-engineered"],
+    "model": {
+      "name": "Logical-Mathematical Intelligence",
+      "short_definition": "The capacity to reason, detect patterns, and work with abstraction, numbers, and logical relationships.",
+      "what_it_is": "This intelligence covers deductive and inductive reasoning, pattern recognition, and comfort with abstraction — the machinery behind mathematics, logic, and scientific thinking. It is about manipulating relationships and quantities, not just calculating quickly.",
+      "why_it_matters": "Alongside linguistic ability, it is the capacity most rewarded by traditional IQ tests and schooling, which is why the two together get treated as being 'smart.' Naming it separately makes room for the other intelligences that conventional testing ignores.",
+      "examples": ["Scientists forming and testing hypotheses", "Programmers decomposing a problem into logical steps", "People who instinctively spot the flaw in a statistical claim"],
+      "common_misuse": "Equating it with being good at arithmetic. Fast calculation is a narrow slice; the core is reasoning about structure and relationships. And like the whole multiple-intelligences model, it is a framework for thinking about minds, not a precise measurement."
+    },
+    "tags": ["multiple intelligences", "logic", "reasoning", "mathematics"]
+  },
+  {
+    "id": "spatial-intelligence",
+    "type": "real_world",
+    "scenario": "A mechanic can picture the inside of an engine he has never opened, rotating it in his mind to find the failing part. He did poorly in school and cannot really explain his reasoning in words — he just sees how the pieces fit and move. His diagnosis takes minutes; the manual takes others hours.",
+    "highlights": ["picture the inside", "rotating it in his mind", "just sees"],
+    "model": {
+      "name": "Spatial Intelligence",
+      "short_definition": "The ability to perceive, manipulate, and reason about visual and spatial relationships in the mind's eye.",
+      "what_it_is": "Spatial intelligence is the capacity to form mental images and transform them — rotating, scaling, and navigating objects and spaces internally. It underlies how architects, surgeons, pilots, and sculptors think.",
+      "why_it_matters": "It is largely invisible to verbal testing, so spatially gifted people are often underrated in classrooms while excelling in real, three-dimensional work. It explains a common mismatch between school performance and hands-on mastery.",
+      "examples": ["Architects and designers visualizing a finished building", "Chess players seeing positions several moves ahead", "Navigators and drivers with a strong internal map"],
+      "common_misuse": "Assuming it only matters for artists. Spatial reasoning is central to engineering, medicine, and the sciences. As with all of Gardner's categories, the boundaries are fuzzy and overlapping, not crisp scientific divisions."
+    },
+    "tags": ["multiple intelligences", "visualization", "spatial reasoning", "design"]
+  },
+  {
+    "id": "musical-intelligence",
+    "type": "real_world",
+    "scenario": "A toddler who can barely speak hums back a complex melody after hearing it once, taps perfect rhythms on the table, and bursts into tears at a minor chord. No one in the family plays an instrument. By the time she is reading words, she is already composing.",
+    "highlights": ["hums back a complex melody after hearing it once", "perfect rhythms", "composing"],
+    "model": {
+      "name": "Musical Intelligence",
+      "short_definition": "Sensitivity to rhythm, pitch, melody, and tone — the capacity to perceive, create, and reflect on music.",
+      "what_it_is": "Musical intelligence is the ability to recognize and produce patterns of sound. Gardner argued it deserves status as a full intelligence, not a mere 'talent,' because it has its own developmental path, neural basis, and symbol systems.",
+      "why_it_matters": "It is a clear case where a profound human capacity sits almost entirely outside what schools measure. It also shows how intelligences can appear remarkably early and independently of language or logic.",
+      "examples": ["Musicians who can transcribe a song by ear", "People with an unerring sense of rhythm and timing", "Composers who hear full arrangements in their head"],
+      "common_misuse": "Dismissing it as 'just a talent' rather than a form of intelligence — the very bias Gardner pushed against. Conversely, do not over-read it: the multiple-intelligences theory remains contested among researchers."
+    },
+    "tags": ["multiple intelligences", "music", "rhythm", "perception"]
+  },
+  {
+    "id": "bodily-kinesthetic-intelligence",
+    "type": "real_world",
+    "scenario": "A student fidgets through every lecture and forgets what he reads — but learns a backflip in an afternoon, can fix almost anything with his hands, and seems to think with his whole body. The school calls it a behavior problem. The dance studio calls it once-in-a-decade.",
+    "highlights": ["think with his whole body", "learns a backflip in an afternoon", "behavior problem"],
+    "model": {
+      "name": "Bodily-Kinesthetic Intelligence",
+      "short_definition": "The capacity to use one's body skillfully and to handle objects with precision, timing, and control.",
+      "what_it_is": "This intelligence is the ability to coordinate physical movement and to learn through doing. It governs athletes, dancers, surgeons, and craftspeople — anyone whose thinking is expressed through the body and hands.",
+      "why_it_matters": "Sit-still classrooms can pathologize exactly the people who learn best by moving. Recognizing bodily-kinesthetic intelligence reframes 'cannot sit still' as 'thinks in motion,' and values mastery that has nothing to do with words.",
+      "examples": ["Athletes and dancers with exceptional body control", "Surgeons and craftspeople with fine motor precision", "People who learn skills fastest by physically practicing them"],
+      "common_misuse": "Treating physical skill as separate from 'real' intelligence — skilled movement involves deep, rapid cognition. Still, remember the framework is a lens for appreciating different minds, not a validated measurement system."
+    },
+    "tags": ["multiple intelligences", "movement", "coordination", "learning"]
+  },
+  {
+    "id": "interpersonal-intelligence",
+    "type": "real_world",
+    "scenario": "In every group project, one person never has the best ideas or the highest grades — yet teams led by her always outperform. She reads the room instantly, knows who is discouraged before they say so, and gets people to do their best work. Reviewers struggle to name what she actually does.",
+    "highlights": ["reads the room instantly", "knows who is discouraged before they say so", "struggle to name what she actually does"],
+    "model": {
+      "name": "Interpersonal Intelligence",
+      "short_definition": "The ability to perceive and respond to the moods, motivations, and needs of other people.",
+      "what_it_is": "Interpersonal intelligence is sensitivity to others — reading emotions, intentions, and social dynamics, and acting on them effectively. It is the core of leadership, teaching, selling, negotiating, and caregiving.",
+      "why_it_matters": "It strongly predicts real-world effectiveness yet barely registers on academic tests. Naming it explains why the 'smartest' person on paper is not always the one who succeeds with and through other people.",
+      "examples": ["Great teachers who sense exactly when a student is lost", "Negotiators and leaders who read a room", "Therapists and mediators who understand what is left unsaid"],
+      "common_misuse": "Confusing it with mere extroversion or charm. It can be quiet and observational, and it can be used manipulatively. It also overlaps heavily with 'emotional intelligence' — different labels for related, still-debated ideas."
+    },
+    "tags": ["multiple intelligences", "empathy", "social", "leadership"]
+  },
+  {
+    "id": "intrapersonal-intelligence",
+    "type": "thought_experiment",
+    "scenario": "Two people get the same harsh feedback. One spirals, blames others, and repeats the mistake. The other sits with the discomfort, accurately names what she felt and why, recognizes the pattern from her past, and changes course. Same information; completely different self-knowledge.",
+    "highlights": ["sits with the discomfort", "accurately names what she felt and why", "self-knowledge"],
+    "model": {
+      "name": "Intrapersonal Intelligence",
+      "short_definition": "The capacity to understand oneself — one's emotions, motivations, and inner life — and to use that knowledge to guide action.",
+      "what_it_is": "Intrapersonal intelligence is accurate self-modeling: knowing your own feelings, values, strengths, and limits, and regulating yourself accordingly. It is the most private of the intelligences and the hardest to observe from the outside.",
+      "why_it_matters": "Self-knowledge underlies good decisions, resilience, and growth. People high in it course-correct from feedback instead of being destabilized by it. It is almost entirely absent from conventional measures of ability.",
+      "examples": ["People who can name their emotions precisely and act on them", "Those who know which environments bring out their best", "Anyone who reliably learns from their own mistakes"],
+      "common_misuse": "Assuming everyone has accurate self-insight — most self-assessment is biased and overconfident. And as with the whole model, intrapersonal 'intelligence' is a useful construct, not something we can yet cleanly measure."
+    },
+    "tags": ["multiple intelligences", "self-awareness", "metacognition", "emotion"]
+  },
+  {
+    "id": "naturalistic-intelligence",
+    "type": "real_world",
+    "scenario": "A field guide can tell two nearly identical birds apart from a half-second of song, knows a storm is coming from the behavior of insects, and remembers thousands of species by subtle differences others cannot see. In a classroom he was unremarkable. In the forest he misses nothing.",
+    "highlights": ["tell two nearly identical birds apart", "subtle differences others cannot see", "misses nothing"],
+    "model": {
+      "name": "Naturalistic Intelligence",
+      "short_definition": "The ability to recognize, categorize, and draw fine distinctions among living things and features of the natural world.",
+      "what_it_is": "Naturalistic intelligence — a later addition to Gardner's list — is sensitivity to nature: identifying plants, animals, and environmental patterns, and classifying the living world. It is the cognition of naturalists, farmers, botanists, and ecologists.",
+      "why_it_matters": "It highlights a kind of perceptual expertise — fine-grained pattern recognition — that traditional intelligence measures overlook entirely. The same classifying skill arguably extends to modern 'species' like cars, brands, or data patterns.",
+      "examples": ["Naturalists who identify species at a glance", "Farmers and gardeners who read soil, weather, and plants", "People with an exceptional eye for categorizing and sorting"],
+      "common_misuse": "Stretching it to explain any pattern-spotting at all, which dilutes the idea. Naturalistic intelligence was also the most contested addition to the theory — a reminder that the whole framework is a model, not settled science."
+    },
+    "tags": ["multiple intelligences", "nature", "classification", "observation"]
+  }
+]

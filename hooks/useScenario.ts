@@ -4,35 +4,39 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import scenariosData from "@/data/scenarios.json";
 import type { Scenario } from "@/lib/types";
 
-const scenarios = scenariosData as Scenario[];
+const defaultScenarios = scenariosData as Scenario[];
 
 /**
- * Scenario navigation. Renders scenario 0 on the server (deterministic, so SSR
- * and the first client render match), then jumps to a random scenario after
- * mount. Serves random unseen scenarios; once every scenario has been seen, the
- * seen-set resets and the loop continues forever.
+ * Scenario navigation over a dataset (mental models by default, or any other
+ * Scenario[] such as the intelligences set). Renders scenario 0 on the server
+ * (deterministic, so SSR and the first client render match), then jumps to a
+ * random scenario after mount. Serves random unseen scenarios; once every
+ * scenario has been seen, the seen-set resets and the loop continues forever.
  */
-export function useScenario() {
+export function useScenario(data: Scenario[] = defaultScenarios) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const seenRef = useRef<Set<number>>(new Set([0]));
   const [history, setHistory] = useState<number[]>([]);
   const didInit = useRef(false);
 
-  const pickNext = useCallback((current: number): number => {
-    let pool = scenarios
-      .map((_, i) => i)
-      .filter((i) => !seenRef.current.has(i) && i !== current);
+  const pickNext = useCallback(
+    (current: number): number => {
+      let pool = data
+        .map((_, i) => i)
+        .filter((i) => !seenRef.current.has(i) && i !== current);
 
-    // All seen → reset, excluding the current card so it doesn't repeat.
-    if (pool.length === 0) {
-      seenRef.current = new Set([current]);
-      pool = scenarios.map((_, i) => i).filter((i) => i !== current);
-    }
+      // All seen → reset, excluding the current card so it doesn't repeat.
+      if (pool.length === 0) {
+        seenRef.current = new Set([current]);
+        pool = data.map((_, i) => i).filter((i) => i !== current);
+      }
 
-    const choice = pool[Math.floor(Math.random() * pool.length)] ?? current;
-    seenRef.current.add(choice);
-    return choice;
-  }, []);
+      const choice = pool[Math.floor(Math.random() * pool.length)] ?? current;
+      seenRef.current.add(choice);
+      return choice;
+    },
+    [data],
+  );
 
   // Randomize the starting scenario on the client, after hydration.
   useEffect(() => {
@@ -57,7 +61,10 @@ export function useScenario() {
     });
   }, []);
 
-  const currentScenario = useMemo(() => scenarios[currentIndex], [currentIndex]);
+  const currentScenario = useMemo(
+    () => data[currentIndex],
+    [data, currentIndex],
+  );
 
   return {
     currentScenario,
@@ -65,6 +72,6 @@ export function useScenario() {
     nextScenario,
     prevScenario,
     canGoBack: history.length > 0,
-    total: scenarios.length,
+    total: data.length,
   };
 }
