@@ -1,27 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Layers, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { BrainLogo } from "@/components/BrainLogo";
 import { Ripple } from "@/components/ui/Ripple";
 
-const STEPS = [
-  {
-    icon: BookOpen,
-    title: "Read the scenario",
-    body: "A real situation — no jargon, no answer up front.",
-  },
-  {
-    icon: Sparkles,
-    title: "Reveal the model",
-    body: "Uncover the mental model that explains what's happening.",
-  },
-  {
-    icon: Layers,
-    title: "Explore further",
-    body: "Go as deep as you want, then save it for later.",
-  },
-];
-
-/** Minimalist landing: what Cognito is, how it works, and a way in. */
+/** Minimalist landing: what Cognito is, and a way in. */
 export default function Landing() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-4 py-16 text-center">
@@ -40,24 +22,7 @@ export default function Landing() {
           like — one model at a time.
         </p>
 
-        <div className="mt-12 grid w-full grid-cols-1 gap-4 sm:grid-cols-3">
-          {STEPS.map(({ icon: Icon, title, body }) => (
-            <div
-              key={title}
-              className="flex flex-col items-center rounded-md-md bg-surface-container-low p-5 text-center"
-            >
-              <Icon className="h-6 w-6 text-primary" />
-              <h2 className="mt-3 font-sans text-title-small font-medium text-on-surface">
-                {title}
-              </h2>
-              <p className="mt-1.5 font-sans text-body-small text-on-surface-variant">
-                {body}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/explore"
             className="md-state md-elevation-1 relative inline-flex h-12 items-center overflow-hidden rounded-md-full bg-primary pl-7 pr-6 font-sans text-label-large font-medium text-on-primary transition-shadow duration-150 ease-md-standard"
