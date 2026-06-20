@@ -8,6 +8,9 @@ import {
 } from "@/lib/storage";
 import type { Scenario, SavedItem } from "@/lib/types";
 
+/** Same-tab broadcast so every useSaved() instance re-reads after a change. */
+const SAVED_CHANGE_EVENT = "cognito:saved-change";
+
 /** React-stateful wrapper around the localStorage saved collection. */
 export function useSaved() {
   const [saved, setSaved] = useState<SavedItem[]>([]);
@@ -16,12 +19,18 @@ export function useSaved() {
   useEffect(() => {
     setSaved(getSaved());
 
-    // Keep multiple tabs / the saved page in sync.
+    const sync = () => setSaved(getSaved());
+    // `storage` fires across tabs; the custom event syncs instances in THIS tab
+    // (the nav badge, the saved page, and any save buttons) on every change.
     const onStorage = (e: StorageEvent) => {
-      if (e.key === "cognito_saved") setSaved(getSaved());
+      if (e.key === "cognito_saved") sync();
     };
     window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
+    window.addEventListener(SAVED_CHANGE_EVENT, sync);
+    return () => {
+      window.removeEventListener("storage", onStorage);
+      window.removeEventListener(SAVED_CHANGE_EVENT, sync);
+    };
   }, []);
 
   const save = useCallback((scenario: Scenario) => {
@@ -34,11 +43,13 @@ export function useSaved() {
     };
     saveItem(item);
     setSaved(getSaved());
+    window.dispatchEvent(new Event(SAVED_CHANGE_EVENT));
   }, []);
 
   const remove = useCallback((id: string) => {
     removeItem(id);
     setSaved(getSaved());
+    window.dispatchEvent(new Event(SAVED_CHANGE_EVENT));
   }, []);
 
   const isSaved = useCallback(

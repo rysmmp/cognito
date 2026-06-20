@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { useScenario } from "@/hooks/useScenario";
 import { cardSwap } from "@/lib/motion";
 import { ScenarioCard } from "@/components/ScenarioCard";
+import { Ripple } from "@/components/ui/Ripple";
 
 export default function Home() {
   const { currentScenario, nextScenario } = useScenario();
@@ -32,10 +33,13 @@ export default function Home() {
           <button
             type="button"
             onClick={nextScenario}
-            className="md-state md-elevation-2 inline-flex h-14 items-center gap-3 rounded-md-lg bg-primary-container pl-5 pr-6 font-sans text-label-large font-medium text-on-primary-container transition-shadow duration-150 ease-md-standard"
+            className="md-state md-elevation-2 relative inline-flex h-14 items-center overflow-hidden rounded-md-lg bg-primary-container pl-5 pr-6 font-sans text-label-large font-medium text-on-primary-container transition-shadow duration-150 ease-md-standard"
           >
-            <ArrowRight className="h-6 w-6" />
-            Next scenario
+            <Ripple />
+            <span className="relative z-[1] inline-flex items-center gap-3">
+              <ArrowRight className="h-6 w-6" />
+              Next scenario
+            </span>
           </button>
         </div>
       </div>

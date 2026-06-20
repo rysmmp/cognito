@@ -2,6 +2,7 @@
 
 import { forwardRef, type ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
+import { Ripple } from "./Ripple";
 
 type Variant = "filled" | "tonal" | "outlined" | "text";
 
@@ -29,9 +30,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
     <button
       ref={ref}
       className={cn(
-        "md-state inline-flex h-10 items-center justify-center gap-2 rounded-md-full px-6 font-sans text-label-large font-medium transition-[background-color,box-shadow] duration-150 ease-md-standard",
+        "md-state relative inline-flex h-10 items-center justify-center overflow-hidden rounded-md-full px-6 font-sans text-label-large font-medium transition-[background-color,box-shadow] duration-150 ease-md-standard",
         "disabled:pointer-events-none disabled:opacity-40",
-        "[&_svg]:h-[18px] [&_svg]:w-[18px]",
         // leading-icon layout gets tighter left padding per M3
         "has-[svg:first-child]:pl-4",
         VARIANT[variant],
@@ -39,7 +39,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
       )}
       {...props}
     >
-      {children}
+      <Ripple />
+      <span className="relative z-[1] inline-flex items-center gap-2 [&_svg]:h-[18px] [&_svg]:w-[18px]">
+        {children}
+      </span>
     </button>
   );
 });

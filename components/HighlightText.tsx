@@ -57,7 +57,7 @@ export function HighlightText({ text, highlights, active }: HighlightTextProps) 
       {sentences.map((segs, si) => (
         <p
           key={si}
-          className="font-sans text-[18px] leading-[1.6] tracking-[0.4px] text-on-surface"
+          className="font-sans text-body-large text-on-surface"
         >
           {segs.map((seg, i) =>
             seg.highlighted ? (

@@ -57,6 +57,7 @@ export function ScenarioCard({ scenario }: ScenarioCardProps) {
 
           {revealed && (
             <ModelPanel
+              id={scenario.id}
               name={scenario.model.name}
               shortDefinition={scenario.model.short_definition}
               showDefinition={atLeast("full")}

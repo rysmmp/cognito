@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Bookmark, BookmarkCheck } from "lucide-react";
 import type { Scenario } from "@/lib/types";
 import { useSaved } from "@/hooks/useSaved";
+import { useSnackbar } from "./Snackbar";
 import { Button } from "./ui/Button";
 
 interface SaveButtonProps {
@@ -16,11 +17,17 @@ interface SaveButtonProps {
  */
 export function SaveButton({ scenario }: SaveButtonProps) {
   const { save, remove, isSaved } = useSaved();
+  const showSnackbar = useSnackbar();
   const saved = isSaved(scenario.id);
 
   const onClick = () => {
-    if (saved) remove(scenario.id);
-    else save(scenario);
+    if (saved) {
+      remove(scenario.id);
+      showSnackbar("Removed from saved");
+    } else {
+      save(scenario);
+      showSnackbar("Saved to your models");
+    }
   };
 
   return (

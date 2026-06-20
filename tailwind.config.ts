@@ -76,9 +76,20 @@ const config: Config = {
         "md-full": "9999px",
       },
       transitionTimingFunction: {
-        // M3 standard easing
+        // M3 easing tokens — https://m3.material.io/styles/motion/easing-and-duration/tokens-specs
         "md-standard": "cubic-bezier(0.2, 0, 0, 1)",
+        "md-standard-decelerate": "cubic-bezier(0, 0, 0, 1)",
+        "md-standard-accelerate": "cubic-bezier(0.3, 0, 1, 1)",
+        // Emphasized is a two-part curve in spec; these are the standard single-cubic approximations.
         "md-emphasized": "cubic-bezier(0.2, 0, 0, 1)",
+        "md-emphasized-decelerate": "cubic-bezier(0.05, 0.7, 0.1, 1)",
+        "md-emphasized-accelerate": "cubic-bezier(0.3, 0, 0.8, 0.15)",
+      },
+      transitionDuration: {
+        // M3 duration tokens (subset)
+        "md-short": "200ms",
+        "md-medium": "300ms",
+        "md-long": "400ms",
       },
     },
   },

@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import type { Scenario } from "@/lib/types";
 import { TYPE_LABEL } from "@/lib/types";
+import { ModelIcon } from "./ModelIcon";
 
 interface ScreenshotTargetProps {
   scenario: Scenario;
@@ -56,6 +57,22 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
               }}
             >
               {TYPE_LABEL[scenario.type]}
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                width: 56,
+                height: 56,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 16,
+                backgroundColor: "#2b2930",
+                color: "#d0bcff",
+                marginBottom: 20,
+              }}
+            >
+              <ModelIcon id={scenario.id} size={32} />
             </div>
 
             <div

@@ -2,6 +2,8 @@
 
 import { X } from "lucide-react";
 import type { SavedItem } from "@/lib/types";
+import { ModelIcon } from "./ModelIcon";
+import { Ripple } from "./ui/Ripple";
 
 interface SavedCardMiniProps {
   item: SavedItem;
@@ -28,10 +30,15 @@ export function SavedCardMini({ item, onRemove }: SavedCardMiniProps) {
         type="button"
         onClick={() => onRemove(item.scenario_id)}
         aria-label={`Remove ${item.model_name}`}
-        className="md-state absolute right-2 top-2 grid h-10 w-10 place-items-center rounded-md-full text-on-surface-variant"
+        className="md-state absolute right-2 top-2 grid h-10 w-10 place-items-center overflow-hidden rounded-md-full text-on-surface-variant"
       >
-        <X className="h-5 w-5" />
+        <Ripple />
+        <X className="relative z-[1] h-5 w-5" />
       </button>
+
+      <div className="mb-3 grid h-10 w-10 place-items-center rounded-md-sm bg-surface-container-high text-primary">
+        <ModelIcon id={item.scenario_id} size={24} />
+      </div>
 
       <h3 className="pr-8 font-sans text-title-large font-medium text-primary">
         {item.model_name}
