@@ -8,7 +8,7 @@ import { BrainLogo } from "./BrainLogo";
 import { Ripple } from "./ui/Ripple";
 
 const LINKS = [
-  { href: "/", label: "Explore" },
+  { href: "/explore", label: "Explore" },
   { href: "/saved", label: "Saved" },
 ];
 

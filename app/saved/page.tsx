@@ -21,7 +21,7 @@ export default function SavedPage() {
               Nothing saved yet.
             </p>
             <Link
-              href="/"
+              href="/explore"
               className="md-state mt-4 inline-flex h-10 items-center gap-2 rounded-md-full pl-3 pr-4 font-sans text-label-large font-medium text-primary"
             >
               <ArrowLeft className="h-[18px] w-[18px]" />
