@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import type { Scenario } from "@/lib/types";
@@ -13,9 +14,11 @@ import { DetailDrawer } from "./DetailDrawer";
 import { SaveButton } from "./SaveButton";
 import { ScreenshotButton } from "./ScreenshotButton";
 import { ScreenshotTarget } from "./ScreenshotTarget";
+import { Ripple } from "./ui/Ripple";
 
 interface ScenarioCardProps {
   scenario: Scenario;
+  onNext: () => void;
 }
 
 /**
@@ -23,7 +26,7 @@ interface ScenarioCardProps {
  * and the save / screenshot actions. Reveal state lives here; remount via a
  * `key` on the scenario id to reset it when navigating.
  */
-export function ScenarioCard({ scenario }: ScenarioCardProps) {
+export function ScenarioCard({ scenario, onNext }: ScenarioCardProps) {
   const { revealState, advance, atLeast } = useReveal();
   const shotRef = useRef<HTMLDivElement>(null);
 
@@ -80,6 +83,20 @@ export function ScenarioCard({ scenario }: ScenarioCardProps) {
           )}
 
           <DetailDrawer model={scenario.model} visible={revealState === "full"} />
+
+          <div className="mt-6">
+            <button
+              type="button"
+              onClick={onNext}
+              className="md-state md-elevation-2 relative inline-flex h-14 w-full items-center justify-center overflow-hidden rounded-md-lg bg-primary-container font-sans text-label-large font-medium text-on-primary-container transition-shadow duration-150 ease-md-standard"
+            >
+              <Ripple />
+              <span className="relative z-[1] inline-flex items-center gap-3">
+                <ArrowRight className="h-6 w-6" />
+                Next scenario
+              </span>
+            </button>
+          </div>
         </div>
       </div>
 
