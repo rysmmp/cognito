@@ -1,4 +1,8 @@
-export type ScenarioType = "thought_experiment" | "real_world" | "puzzle";
+export type ScenarioType =
+  | "thought_experiment"
+  | "real_world"
+  | "puzzle"
+  | "dilemma";
 
 export interface Model {
   name: string;
@@ -16,6 +20,8 @@ export interface Scenario {
   highlights: string[];
   model: Model;
   tags: string[];
+  /** Fallacies only: "what would you do?" answer options shown before the reveal. */
+  choices?: string[];
 }
 
 export interface SavedItem {
@@ -26,9 +32,10 @@ export interface SavedItem {
   saved_at: string; // ISO timestamp
 }
 
-/** Human-readable labels for scenario type tags. */
+/** Human-readable labels for scenario type tags (the assist chip). */
 export const TYPE_LABEL: Record<ScenarioType, string> = {
   thought_experiment: "Thought Experiment",
   real_world: "Real-World Case",
   puzzle: "Puzzle",
+  dilemma: "What would you do?",
 };

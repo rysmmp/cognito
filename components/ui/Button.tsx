@@ -11,7 +11,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const VARIANT: Record<Variant, string> = {
-  filled: "bg-primary text-on-primary",
+  filled: "btn-accent text-on-primary",
   tonal: "bg-secondary-container text-on-secondary-container",
   outlined: "border border-outline text-primary bg-transparent",
   text: "text-primary bg-transparent",

@@ -31,28 +31,29 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
           style={{
             width: 600,
             padding: 40,
-            backgroundColor: "#141218",
+            backgroundColor: "#07090c",
             boxSizing: "border-box",
-            fontFamily: "var(--font-sans), Roboto, system-ui, sans-serif",
+            fontFamily: "var(--font-sans), Inter, system-ui, sans-serif",
           }}
         >
           <div
             style={{
               borderRadius: 12,
-              backgroundColor: "#1d1b20",
+              backgroundColor: "#0f141a",
+              border: "1px solid rgba(255,255,255,0.07)",
               padding: 36,
             }}
           >
             <div
               style={{
                 display: "inline-block",
-                border: "1px solid #49454f",
+                border: "1px solid #344350",
                 borderRadius: 8,
                 padding: "5px 12px",
                 fontSize: 14,
                 fontWeight: 500,
                 letterSpacing: "0.1px",
-                color: "#cac4d0",
+                color: "#9bb0bf",
                 marginBottom: 24,
               }}
             >
@@ -67,8 +68,8 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
                 alignItems: "center",
                 justifyContent: "center",
                 borderRadius: 16,
-                backgroundColor: "#2b2930",
-                color: "#d0bcff",
+                backgroundColor: "#151b22",
+                color: "#5cc8ff",
                 marginBottom: 20,
               }}
             >
@@ -80,7 +81,7 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
                 fontSize: 28,
                 fontWeight: 500,
                 lineHeight: 1.3,
-                color: "#d0bcff",
+                color: "#5cc8ff",
                 marginBottom: 20,
               }}
             >
@@ -91,7 +92,7 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
               style={{
                 fontSize: 16,
                 lineHeight: 1.5,
-                color: "#e6e1e9",
+                color: "#e6edf3",
                 display: "-webkit-box",
                 WebkitLineClamp: 4,
                 WebkitBoxOrient: "vertical",
@@ -109,7 +110,7 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
                 fontSize: 14,
                 fontWeight: 500,
                 letterSpacing: "0.1px",
-                color: "#938f99",
+                color: "#6b7a88",
               }}
             >
               Cognito

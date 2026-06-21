@@ -3,31 +3,39 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useScenario } from "@/hooks/useScenario";
 import { cardSwap } from "@/lib/motion";
-import { ScenarioCard } from "@/components/ScenarioCard";
-import type { RevealLabels } from "@/components/RevealButton";
+import { cn } from "@/lib/utils";
+import { ScenarioCard } from "./ScenarioCard";
+import { ChoiceCard } from "./ChoiceCard";
+import { FlipCard } from "./FlipCard";
+import type { RevealLabels } from "./RevealButton";
 import type { Scenario } from "@/lib/types";
 
+export type StreamMode = "reveal" | "choice" | "flip";
+
 /**
- * The scenario → reveal experience, driven by whichever dataset is passed in
- * (mental models on /explore, intelligences on /intelligences, riddles on
- * /riddles). Identical format either way; `revealLabels` lets a section retune
- * the reveal-button wording.
+ * The one-at-a-time experience for any category. `mode` selects the front
+ * interaction: tap-to-reveal (Models/Intelligence), pick-a-choice (Fallacies),
+ * or flip (Puzzles). All share the ConceptDetail reveal underneath.
  */
 export function ScenarioStream({
   data,
+  mode = "reveal",
   revealLabels,
 }: {
   data: Scenario[];
+  mode?: StreamMode;
   revealLabels?: RevealLabels;
 }) {
   const { currentScenario, nextScenario } = useScenario(data);
 
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-4 py-10">
-      <div className="w-full max-w-[680px] lg:max-w-[960px]">
-        {/* initial={false} → the first card paints in its visible state (and is
-            present in the SSR HTML), so it never flashes blank before JS loads.
-            Subsequent scenario swaps via "Next" still animate. */}
+      <div
+        className={cn(
+          "w-full",
+          mode === "flip" ? "max-w-[680px]" : "max-w-[680px] lg:max-w-[960px]",
+        )}
+      >
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={currentScenario.id}
@@ -36,11 +44,17 @@ export function ScenarioStream({
             animate="visible"
             exit="exit"
           >
-            <ScenarioCard
-              scenario={currentScenario}
-              onNext={nextScenario}
-              revealLabels={revealLabels}
-            />
+            {mode === "choice" ? (
+              <ChoiceCard scenario={currentScenario} onNext={nextScenario} />
+            ) : mode === "flip" ? (
+              <FlipCard scenario={currentScenario} onNext={nextScenario} />
+            ) : (
+              <ScenarioCard
+                scenario={currentScenario}
+                onNext={nextScenario}
+                revealLabels={revealLabels}
+              />
+            )}
           </motion.div>
         </AnimatePresence>
       </div>

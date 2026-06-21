@@ -377,6 +377,79 @@ const GLYPHS: Record<string, ReactNode> = {
       <circle cx="15.5" cy="12" r="2.6" fill="currentColor" stroke="none" />
     </>
   ),
+
+  // ——— Fallacies (logical / argumentation) ———
+
+  // A scarecrow — the straw man.
+  "straw-man": (
+    <>
+      <circle cx="12" cy="4.5" r="2.2" />
+      <path d="M12 6.7v10.3" />
+      <path d="M4.5 10h15" />
+      <path d="M12 17l-3 4M12 17l3 4" />
+      <path d="M4.5 10l-1.5-1.5M4.5 10l-1 2M19.5 10l1.5-1.5M19.5 10l1 2" />
+    </>
+  ),
+  // An arrow aimed at the person, not the argument.
+  "ad-hominem": (
+    <>
+      <circle cx="8" cy="8" r="3" />
+      <path d="M3.5 19a4.5 4.5 0 0 1 9 0" />
+      <path d="M21 7l-6 3.5" />
+      <path d="M21 7l-3 .3M21 7l-.4 3" />
+    </>
+  ),
+  // A two-way fork — only two options offered.
+  "false-dilemma": (
+    <>
+      <path d="M12 21v-7" />
+      <path d="M12 14 6 5M12 14l6-9" />
+      <circle cx="6" cy="4" r="1.4" />
+      <circle cx="18" cy="4" r="1.4" />
+    </>
+  ),
+  // A ball rolling down a slope.
+  "slippery-slope": (
+    <>
+      <path d="M3 6c7 0 8 12 18 13" />
+      <circle cx="5.5" cy="6.6" r="2" />
+      <path d="M21 19l-2.6-.3M21 19l-.3-2.6" />
+    </>
+  ),
+  // A crown — appeal to authority.
+  "appeal-to-authority": (
+    <>
+      <path d="M4 8l3.5 3.5L12 5l4.5 6.5L20 8v9H4V8Z" />
+      <path d="M4 20h16" />
+    </>
+  ),
+  // A leap from a tiny sample to a big conclusion.
+  "hasty-generalization": (
+    <>
+      <circle cx="4.5" cy="7" r="1.4" />
+      <circle cx="4.5" cy="13" r="1.4" />
+      <path d="M8 10h5M13 10l-2.2-2M13 10l-2.2 2" />
+      <circle cx="18" cy="10" r="3.5" />
+    </>
+  ),
+  // Two events linked by a dashed (questionable) causal arrow.
+  "post-hoc": (
+    <>
+      <circle cx="5.5" cy="12" r="3" />
+      <circle cx="18.5" cy="12" r="3" />
+      <path d="M9 12h6" strokeDasharray="2 2" />
+      <path d="M15 12l-2-2M15 12l-2 2" />
+    </>
+  ),
+  // A wagon — the bandwagon.
+  "bandwagon": (
+    <>
+      <path d="M4 7h11l1.5 7H5.5L4 7Z" />
+      <path d="M4 7 3 4H2" />
+      <circle cx="8" cy="18" r="2" />
+      <circle cx="15" cy="18" r="2" />
+    </>
+  ),
 };
 
 /** Fallback when an id has no bespoke glyph. */

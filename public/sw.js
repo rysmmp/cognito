@@ -1,6 +1,6 @@
 // Cognito service worker — offline app shell + runtime caching.
-const CACHE = "cognito-v1";
-const PRECACHE = ["/", "/explore", "/intelligences", "/riddles", "/saved"];
+const CACHE = "cognito-v2";
+const PRECACHE = ["/", "/models", "/intelligence", "/fallacies", "/puzzles", "/saved"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

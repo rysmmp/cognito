@@ -3,10 +3,9 @@
 import { Button } from "./ui/Button";
 import type { RevealState } from "@/hooks/useReveal";
 
-/** Labels for the two interactive reveal steps (the "full" step has no button). */
+/** Per-section override for the single reveal button's label. */
 export interface RevealLabels {
   hidden?: string;
-  name?: string;
 }
 
 interface RevealButtonProps {
@@ -15,30 +14,15 @@ interface RevealButtonProps {
   labels?: RevealLabels;
 }
 
-const DEFAULT_LABELS: Required<RevealLabels> = {
-  hidden: "Reveal the model",
-  name: "What is this?",
-};
-
 /**
- * M3 filled button driving the progressive reveal. The 'name' step reveals
- * everything (definition + actions + Explore further), so the button is hidden
- * once the reveal is complete ('full'). Labels are configurable per section
- * (e.g. "Reveal the answer" for riddles).
+ * The single M3 filled button that triggers the reveal. Once revealed, the
+ * concept discloses progressively on scroll, so the button is gone.
  */
 export function RevealButton({ revealState, onAdvance, labels }: RevealButtonProps) {
-  const merged = { ...DEFAULT_LABELS, ...labels };
-  const label =
-    revealState === "hidden"
-      ? merged.hidden
-      : revealState === "name"
-        ? merged.name
-        : undefined;
-  if (!label) return null;
-
+  if (revealState !== "hidden") return null;
   return (
     <Button variant="filled" onClick={onAdvance} className="w-full">
-      {label}
+      {labels?.hidden ?? "Reveal the model"}
     </Button>
   );
 }

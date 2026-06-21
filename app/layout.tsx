@@ -1,17 +1,30 @@
 import type { Metadata, Viewport } from "next";
-import { Roboto } from "next/font/google";
+import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Particles } from "@/components/Particles";
 import { PwaRegister } from "@/components/PwaRegister";
 import { SnackbarProvider } from "@/components/Snackbar";
 
-// Roboto — the typeface of Google's Material Design system. Drives every
-// `font-sans` surface via --font-sans. (Roboto ships 400/500/700, not 600.)
-const sans = Roboto({
-  weight: ["400", "500", "700"],
+// Inter for body/UI; Space Grotesk for display/headings — a modern,
+// tech-forward pairing. Exposed as --font-sans / --font-display.
+const sans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+const display = Space_Grotesk({
+  weight: ["500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+// Monospace for instrument-style labels (chips, eyebrows, badges).
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -34,7 +47,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#141218",
+  themeColor: "#07090c",
   width: "device-width",
   initialScale: 1,
   // Let the PWA fill the display on devices with notches.
@@ -47,9 +60,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={sans.variable}>
+    <html
+      lang="en"
+      className={`${sans.variable} ${display.variable} ${mono.variable}`}
+    >
       <body className="min-h-screen bg-background text-on-surface antialiased">
         <SnackbarProvider>
+          <div className="beam" aria-hidden="true" />
+          <div className="grid-overlay" aria-hidden="true" />
           <Particles />
           <div className="relative z-10 flex min-h-screen flex-col">
             <Nav />

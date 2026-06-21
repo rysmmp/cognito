@@ -46,7 +46,9 @@ const config: Config = {
         "inverse-primary": "var(--md-inverse-primary)",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "Roboto", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Space Grotesk", "var(--font-sans)", "sans-serif"],
+        mono: ["var(--font-mono)", "JetBrains Mono", "ui-monospace", "monospace"],
       },
       // M3 type scale — https://m3.material.io/styles/typography/type-scale-tokens
       fontSize: {

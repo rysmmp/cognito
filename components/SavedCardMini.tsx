@@ -25,7 +25,7 @@ function formatDate(iso: string): string {
 /** Compact, non-interactive display of a saved model — M3 outlined card. */
 export function SavedCardMini({ item, onRemove }: SavedCardMiniProps) {
   return (
-    <div className="relative rounded-md-md border border-outline-variant bg-surface-container-low p-5">
+    <div className="glass relative rounded-md-md p-5">
       <button
         type="button"
         onClick={() => onRemove(item.scenario_id)}
@@ -40,7 +40,7 @@ export function SavedCardMini({ item, onRemove }: SavedCardMiniProps) {
         <ModelIcon id={item.scenario_id} size={24} />
       </div>
 
-      <h3 className="pr-8 font-sans text-title-large font-medium text-primary">
+      <h3 className="pr-8 font-display text-title-large font-medium text-primary">
         {item.model_name}
       </h3>
 
@@ -48,7 +48,7 @@ export function SavedCardMini({ item, onRemove }: SavedCardMiniProps) {
         {item.scenario_text}
       </p>
 
-      <p className="mt-4 font-sans text-label-medium font-medium text-on-surface-variant">
+      <p className="mt-4 font-mono text-label-medium uppercase tracking-wide text-on-surface-variant">
         {formatDate(item.saved_at)}
       </p>
     </div>

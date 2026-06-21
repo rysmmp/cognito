@@ -1,0 +1,162 @@
+[
+  {
+    "id": "straw-man",
+    "type": "dilemma",
+    "scenario": "Your teammate proposes shipping a smaller v1 to get feedback sooner. In the meeting, a senior engineer responds: \"So you're saying we should just throw something broken at users and not care about quality?\" The room turns to you. What do you do?",
+    "highlights": ["smaller v1", "throw something broken", "not care about quality"],
+    "choices": [
+      "Defend the 'broken' version — maybe a rough v1 is fine",
+      "Point out that a smaller v1 isn't the same as a low-quality one",
+      "Drop it; the senior engineer clearly knows better"
+    ],
+    "model": {
+      "name": "Straw Man",
+      "short_definition": "Misrepresenting someone's argument as a weaker, distorted version, then attacking that version instead of what they actually said.",
+      "what_it_is": "A straw man replaces a real position with a flimsy caricature that's easier to knock down. Here, 'ship a smaller v1' was rewritten as 'ship something broken and don't care about quality' — a claim no one made. Beating the caricature feels like winning, but the original argument is untouched.",
+      "why_it_matters": "It derails honest debate and lets weak ideas win by making strong ones look ridiculous. The fix is to restate the other person's argument in its strongest form (steel-manning) before responding — both to be fair and to actually engage the real point.",
+      "examples": ["'You want to cut this budget line?' → 'So you want the project to fail?'", "'Let's regulate X' → 'They want to ban everything'", "Quoting someone out of context to attack a claim they didn't make"],
+      "common_misuse": "Calling every rephrasing a straw man. Summarizing someone fairly — even unflatteringly — isn't a straw man; the distortion is what makes it one. If your restatement is accurate, it's just paraphrase."
+    },
+    "tags": ["logical fallacy", "argument", "rhetoric", "debate"]
+  },
+  {
+    "id": "ad-hominem",
+    "type": "dilemma",
+    "scenario": "A junior analyst presents data suggesting the team's favorite strategy is underperforming. Someone replies, \"You've only been here six months — you don't really understand how this business works.\" Nobody addresses the data. They look to you for a response. What do you do?",
+    "highlights": ["only been here six months", "Nobody addresses the data"],
+    "choices": [
+      "Agree — experience matters, so the data can probably wait",
+      "Redirect everyone back to whether the data itself holds up",
+      "Defend the analyst's credentials and tenure"
+    ],
+    "model": {
+      "name": "Ad Hominem",
+      "short_definition": "Attacking the person making an argument rather than the argument itself.",
+      "what_it_is": "An ad hominem dismisses a claim by targeting the speaker — their experience, motives, or character — instead of engaging what they said. The analyst's tenure has no bearing on whether the data is correct; the numbers stand or fall on their own. Even defending their credentials concedes the wrong battleground.",
+      "why_it_matters": "It lets people sidestep uncomfortable evidence by discrediting the messenger, and it silences exactly the outsiders who often see what insiders miss. Separate the claim from the claimant: a correct argument is correct regardless of who makes it.",
+      "examples": ["'Of course they'd say that — look who funds them'", "'You're too young to have an opinion on this'", "Dismissing a study because you dislike the author"],
+      "common_misuse": "When someone's credibility is the actual issue (e.g. an expert witness's bias), examining it is legitimate, not ad hominem. It's a fallacy only when the attack replaces engagement with the argument."
+    },
+    "tags": ["logical fallacy", "argument", "bias", "debate"]
+  },
+  {
+    "id": "false-dilemma",
+    "type": "dilemma",
+    "scenario": "Leadership announces: \"We either cut 20% of staff now, or the whole company goes under by spring.\" It's framed as the only choice. People start picking sides. Before you weigh in, what do you do?",
+    "highlights": ["either cut 20%", "or the whole company goes under", "only choice"],
+    "choices": [
+      "Pick the lesser evil — layoffs are bad, but bankruptcy is worse",
+      "Ask what other options exist between those two extremes",
+      "Trust leadership; they framed it that way for a reason"
+    ],
+    "model": {
+      "name": "False Dilemma",
+      "short_definition": "Presenting only two options as if they were the only possibilities, when others exist.",
+      "what_it_is": "A false dilemma (or false dichotomy) squeezes a rich set of options down to two, usually one obviously bad. 'Layoffs or bankruptcy' ignores pay cuts, fundraising, cutting other costs, or partial measures. The framing does the persuading — once you accept the two choices, you've already lost the real options.",
+      "why_it_matters": "It's one of the most common manipulation tactics in politics, sales, and management because it manufactures urgency and forecloses creativity. The counter-move is simple and powerful: ask 'what are the options between these two?'",
+      "examples": ["'You're either with us or against us'", "'Either we accept this deal or we get nothing'", "'If you're not optimizing, you're falling behind'"],
+      "common_misuse": "Some dilemmas are genuine — sometimes there really are only two viable paths. It's a fallacy only when real alternatives are hidden or ignored, not whenever someone offers two options."
+    },
+    "tags": ["logical fallacy", "decision-making", "framing", "persuasion"]
+  },
+  {
+    "id": "slippery-slope",
+    "type": "dilemma",
+    "scenario": "You suggest letting employees work from home one day a week. A manager objects: \"If we allow one day, soon they'll want two, then nobody comes in, then the office culture collapses and the company falls apart.\" The chain sounds dramatic but vivid. What do you do?",
+    "highlights": ["if we allow one day", "then nobody comes in", "the company falls apart"],
+    "choices": [
+      "Play it safe — that chain reaction does sound risky",
+      "Ask which link in that chain is actually likely, and why",
+      "Propose banning remote work entirely to avoid the risk"
+    ],
+    "model": {
+      "name": "Slippery Slope",
+      "short_definition": "Claiming one small step will inevitably lead to a chain of increasingly bad outcomes, without showing the steps are actually linked.",
+      "what_it_is": "A slippery slope assumes that A leads to B leads to C... down to a disaster, treating each link as inevitable when none is established. One remote day doesn't mechanically cause cultural collapse. The argument borrows its force from the scary endpoint, not from evidence that the chain holds.",
+      "why_it_matters": "It blocks reasonable, reversible experiments by attaching them to imaginary catastrophes. Test each link: is this step actually likely to cause the next? Most slopes have friction — limits, feedback, and the ability to stop partway.",
+      "examples": ["'If we give an extension once, everyone will expect them forever'", "'Legalize this and soon anything goes'", "'One exception and the whole policy is meaningless'"],
+      "common_misuse": "Some chains are real and well-evidenced (genuine precedents, incentives, or runaway feedback). Pointing those out isn't a fallacy — the fallacy is asserting the chain without showing the links are likely."
+    },
+    "tags": ["logical fallacy", "risk", "policy", "reasoning"]
+  },
+  {
+    "id": "appeal-to-authority",
+    "type": "dilemma",
+    "scenario": "In a design review, someone shuts down a debate with: \"A famous founder said this pattern is the right way to do it, so that settles it.\" No one checks whether it fits your product or users. They move to wrap up. What do you do?",
+    "highlights": ["a famous founder said", "so that settles it", "whether it fits your product"],
+    "choices": [
+      "Go with it — that founder is clearly successful",
+      "Ask whether the reasoning behind the claim fits your case",
+      "Find a different famous quote that supports your side"
+    ],
+    "model": {
+      "name": "Appeal to Authority",
+      "short_definition": "Treating a claim as true simply because an authority or famous figure said it — rather than because of the evidence or reasoning.",
+      "what_it_is": "An appeal to authority substitutes someone's status for an actual argument. A founder's success doesn't make a pattern right for your different product, users, or constraints. Expertise can be useful evidence, but 'they said so' is not the same as 'and here's why it's true here.'",
+      "why_it_matters": "It shuts down inquiry and transplants advice across contexts where it doesn't apply. Ask for the reasoning, not just the name: a good authority can explain why — and that 'why' is what you should actually evaluate.",
+      "examples": ["'A Nobel laureate believes it, so it must be true' (outside their field)", "'Big company X does it this way' (different scale, different problem)", "Citing a celebrity endorsement as proof a product works"],
+      "common_misuse": "Deferring to genuine expert consensus in its domain is reasonable, not fallacious. The fallacy is leaning on authority in place of evidence — especially borrowed authority from outside the relevant field."
+    },
+    "tags": ["logical fallacy", "evidence", "expertise", "decision-making"]
+  },
+  {
+    "id": "hasty-generalization",
+    "type": "dilemma",
+    "scenario": "Two customers complained about a new feature this morning, and a colleague declares: \"Users hate it. We should roll it back today.\" The feature shipped to fifty thousand people yesterday. A decision is forming fast. What do you do?",
+    "highlights": ["two customers complained", "Users hate it", "fifty thousand people"],
+    "choices": [
+      "Roll it back — unhappy users are a bad sign",
+      "Look at usage and feedback across the whole user base first",
+      "Wait for more complaints to come in before deciding"
+    ],
+    "model": {
+      "name": "Hasty Generalization",
+      "short_definition": "Drawing a broad conclusion from a sample that's too small or unrepresentative to support it.",
+      "what_it_is": "A hasty generalization leaps from a few cases to 'everyone.' Two complaints out of fifty thousand users is not evidence that 'users hate it' — complainers are a tiny, self-selected slice. The vividness of a couple of angry messages outweighs the silent majority in our minds, but not in the data.",
+      "why_it_matters": "It drives overreactions and false lessons everywhere — from product decisions to prejudice about whole groups based on one or two encounters. Before generalizing, ask: how big and how representative is my sample?",
+      "examples": ["'I met two rude people from that city — everyone there is rude'", "'This stock went up twice, it always goes up'", "Judging a whole product from a single review"],
+      "common_misuse": "Small samples can still warrant action when stakes are high or signal is strong (a single security breach is enough to act). The fallacy is the unjustified leap to a general claim, not all decisions made on limited data."
+    },
+    "tags": ["logical fallacy", "statistics", "evidence", "decision-making"]
+  },
+  {
+    "id": "post-hoc",
+    "type": "dilemma",
+    "scenario": "The team changed the homepage button color, and the next week signups rose 12%. A colleague concludes the color change caused it and wants to repaint everything. That same week you also ran a press campaign. What do you do?",
+    "highlights": ["changed the homepage button color", "signups rose 12%", "press campaign"],
+    "choices": [
+      "Repaint everything — the timing lines up",
+      "Note the other changes and suggest a controlled test",
+      "Assume signups rose on their own and ignore both"
+    ],
+    "model": {
+      "name": "Post Hoc (Correlation ≠ Causation)",
+      "short_definition": "Assuming that because B happened after A, A caused B — confusing sequence or correlation with cause.",
+      "what_it_is": "Post hoc ergo propter hoc means 'after this, therefore because of this.' Signups rose after the color change, but they also followed the press campaign — and might have risen anyway. Correlation in time doesn't establish cause; it just means two things happened near each other.",
+      "why_it_matters": "Mistaking correlation for causation leads to confident, expensive, wrong conclusions — repainting everything for a result the press drove. The remedy is isolating variables: a controlled A/B test changes one thing at a time so you can attribute the effect.",
+      "examples": ["'I wore these socks and we won — they're lucky'", "'Ice cream sales and drownings both rise' (both caused by summer)", "Crediting a new manager for gains that were already trending up"],
+      "common_misuse": "Causation does exist and timing is real evidence — demanding 'correlation isn't causation' to dismiss every link is its own error. The point is to test for cause, not to deny that causes can be found."
+    },
+    "tags": ["logical fallacy", "causation", "statistics", "experimentation"]
+  },
+  {
+    "id": "bandwagon",
+    "type": "dilemma",
+    "scenario": "A risky vendor contract is up for approval. When you raise concerns, the lead says, \"Every other team has already signed on — are you really going to be the one to hold this up?\" Heads nod around the table. What do you do?",
+    "highlights": ["every other team has already signed on", "hold this up", "Heads nod"],
+    "choices": [
+      "Sign — if everyone else is on board, it's probably fine",
+      "Evaluate the contract on its merits regardless of who signed",
+      "Ask the other teams to reassure you it's a good idea"
+    ],
+    "model": {
+      "name": "Bandwagon (Appeal to Popularity)",
+      "short_definition": "Treating something as true or right because many people believe it or are doing it.",
+      "what_it_is": "The bandwagon fallacy substitutes popularity for merit: 'everyone's doing it, so it must be good.' But the other teams may have signed for the same reason you're being pressured to — social momentum, not analysis. A risky contract is risky no matter how many signatures it has.",
+      "why_it_matters": "Consensus feels like safety, which is exactly how bubbles, fads, and bad group decisions form — everyone assuming everyone else did the thinking. The defense is to evaluate the thing itself and treat 'everyone agrees' as a prompt to check, not a conclusion.",
+      "examples": ["'It's the best-selling option, so it's the best'", "'Everyone's investing in this — get in now'", "Adopting a tool because it's trendy, not because it fits"],
+      "common_misuse": "Sometimes the crowd is genuinely informative (many independent users rating a product). Social proof is a real signal — the fallacy is letting popularity replace your own evaluation in a decision that warrants it."
+    },
+    "tags": ["logical fallacy", "social proof", "decision-making", "influence"]
+  }
+]

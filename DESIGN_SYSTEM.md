@@ -6,51 +6,55 @@
 
 ---
 
-## Visual Direction
+## Visual Direction — "Armory" (dark AI / neural)
 
-A focused, dark M3 surface for reading one scenario at a time. Tonal elevation
-(color, not heavy shadow) separates surfaces; the purple-seed scheme keeps the
-accent calm. Motion is purposeful and short — emphasized easing on entrances,
-nothing decorative.
+A sleek, tech-forward dark surface: near-black backgrounds, an **electric
+cyan-blue** accent, **glassy** translucent cards with a soft accent **glow**, a
+faint cyan grid + interactive particles behind everything. Modern geometric
+display type. Motion is purposeful and short. (Earlier the app used a Material 3
+purple scheme; the token names stay `--md-*` but the values now carry this
+direction.)
 
-**Principles:** legible type scale · 4dp spacing grid · tonal surfaces · pill
-components with state layers · rounded M3 shapes · restrained color.
+**Principles:** high-contrast type · generous spacing · glass + hairline borders
+· cyan accent + glow · pill components · subtle grid/particle ambiance.
 
 ---
 
-## Color — M3 Dark Scheme (purple seed)
+## Color — Electric cyan-blue on near-black
 
 Defined as `--md-*` custom properties in `app/globals.css` and exposed to Tailwind
-as semantic utilities (`bg-surface`, `text-primary`, `border-outline-variant`, …)
-in `tailwind.config.ts`. Always use the role token, never the hex.
+as semantic utilities (`bg-surface`, `text-primary`, `border-outline-variant`, …).
+`app/globals.css` is the source of truth — always use the role token, never the hex.
 
 | Role | Token | Value |
 |------|-------|-------|
-| Primary | `--md-primary` | `#d0bcff` |
-| On primary | `--md-on-primary` | `#381e72` |
-| Primary container | `--md-primary-container` | `#4f378b` |
-| On primary container | `--md-on-primary-container` | `#eaddff` |
-| Secondary container | `--md-secondary-container` | `#4a4458` |
-| On secondary container | `--md-on-secondary-container` | `#e8def8` |
-| Tertiary | `--md-tertiary` | `#efb8c8` |
-| Error | `--md-error` | `#f2b8b5` |
-| Background / Surface | `--md-background` / `--md-surface` | `#141218` |
-| On surface | `--md-on-surface` | `#e6e1e9` |
-| On surface variant | `--md-on-surface-variant` | `#cac4d0` |
-| Outline | `--md-outline` | `#938f99` |
-| Outline variant | `--md-outline-variant` | `#49454f` |
+| Primary (accent) | `--md-primary` | `#5cc8ff` |
+| On primary | `--md-on-primary` | `#00344b` |
+| Primary container | `--md-primary-container` | `#0c3d56` |
+| On primary container | `--md-on-primary-container` | `#bfe9ff` |
+| Secondary container | `--md-secondary-container` | `#143140` |
+| Background / Surface | `--md-background` / `--md-surface` | `#07090c` |
+| On surface | `--md-on-surface` | `#e6edf3` |
+| On surface variant | `--md-on-surface-variant` | `#9bb0bf` |
+| Outline | `--md-outline` | `#344350` |
+| Outline variant | `--md-outline-variant` | `#1c2630` |
 
-**Tonal surface containers** (elevation by color, lowest → highest):
-`#0f0d13` · `#1d1b20` · `#211f26` · `#2b2930` · `#36343b`
-→ `bg-surface-container-lowest … bg-surface-container-highest`.
+**Tonal surface containers** (lowest → highest):
+`#05070a` · `#0b0e13` · `#0f141a` · `#151b22` · `#1b222b`.
+
+**Surface treatments** (`app/globals.css`): `.glass` (translucent + blur +
+hairline, via `color-mix`) for cards, `.glow` (`--md-glow` cyan shadow) behind
+key surfaces, `.app-bar` (blurred translucent top bar), `.grid-overlay` (cyan
+grid).
 
 ---
 
 ## Typography
 
-**Typeface:** **Roboto** (the Material type), loaded via `next/font` in
-`app/layout.tsx` with weights 400/500/700 and exposed as `--font-sans` →
-`font-sans`. No serif or mono faces.
+**Typefaces:** **Inter** for body/UI (`--font-sans` → `font-sans`) and **Space
+Grotesk** for display/headings (`--font-display` → `font-display`), loaded via
+`next/font` in `app/layout.tsx`. Apply `font-display` to large headings (brand,
+landing h1, concept name, page titles); everything else uses `font-sans`.
 
 The full M3 type scale lives in `tailwind.config.ts` under `fontSize`. Use the
 token class — never an arbitrary `text-[..px]`.
@@ -194,14 +198,46 @@ Symbols (Outlined). Sizing per M3:
 In use: `ArrowRight`, `ArrowLeft`, `ChevronDown`, `Bookmark` / `BookmarkCheck`,
 `Download`, `Loader2`, `X`.
 
-**Per-model line art.** Beyond the UI icons, every mental model has its own
-bespoke glyph in the brand line style (24×24, 1.5px, round, `currentColor`) —
-`components/ModelIcon.tsx`, keyed by model id (e.g. anchor → Anchoring Bias,
-hourglass → Theory of Constraints, overlapping circles → Bayes' Theorem). They
-appear in a tonal tile (`surface-container-high`, `text-primary`) on the revealed
-model panel, the saved cards, and the shareable screenshot. Add a glyph to the
-`GLYPHS` map whenever a new model is added; unknown ids fall back to a generic
-mark.
+**Per-concept line art.** Beyond the UI icons, every concept (model,
+intelligence, fallacy, puzzle) has its own bespoke glyph in the brand line style
+(24×24, 1.5px, round, `currentColor`) — `components/ModelIcon.tsx`, keyed by id
+(e.g. anchor → Anchoring Bias, scarecrow → Straw Man, parachute → the field
+puzzle). They appear in a tonal tile (`surface-container-high`, `text-primary`)
+on the revealed concept, the saved cards, and the shareable screenshot. Add a
+glyph to the `GLYPHS` map whenever a new concept is added; unknown ids fall back
+to a generic mark.
+
+**Nav category icons** use `lucide-react`: Models→`Shapes`,
+Intelligence→`Lightbulb`, Fallacies→`AlertTriangle`, Puzzles→`Puzzle`,
+Saved→`Bookmark`. Labels show on `sm`+ and collapse to icons on mobile.
+
+---
+
+## Information Architecture & Disclosure (v2)
+
+Four icon-based categories, each presenting one concept at a time and sharing the
+`ConceptDetail` reveal. Routes: `/models`, `/intelligence`, `/fallacies`,
+`/puzzles`, plus `/saved` and the `/` landing.
+
+`components/ScenarioStream.tsx` drives all of them with a `mode`:
+
+| Mode | Sections | Front interaction | Component |
+|------|----------|-------------------|-----------|
+| `reveal` | Models, Intelligence | one tap reveals the concept | `ScenarioCard` |
+| `choice` | Fallacies | "what would you do?" → pick an option | `ChoiceCard` |
+| `flip` | Puzzles | tap → 3D Y-axis flip to the answer | `FlipCard` |
+
+**Disclosure** (`components/ConceptDetail.tsx`) replaces the old click-to-expand
+drawer: the lead (glyph + name + definition) appears on reveal; the deeper
+sections (*What it is / Why it matters / Examples*) fade in on scroll
+(`whileInView`, once) with letter-spaced **eyebrow** labels for skimmability; the
+*Common misuse* caveat stays in an auto-animating `CollapsibleSection`. A
+bouncing chevron cues scrolling and hides after the first scroll. No "read more".
+
+Reveal is a single step (`hooks/useReveal.ts`: `hidden → revealed`).
+
+**Background:** a subtle fixed line grid (`.grid-overlay` in `globals.css`,
+radial-masked) sits under the particle field.
 
 ---
 
