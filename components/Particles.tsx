@@ -75,7 +75,7 @@ export function Particles() {
     const primaryHex = getComputedStyle(document.documentElement)
       .getPropertyValue("--md-primary")
       .trim();
-    const base = hexToRgb(primaryHex || "#5cc8ff");
+    const base = hexToRgb(primaryHex || "#d7dde5");
     const rgb = `${base[0]}, ${base[1]}, ${base[2]}`;
     const [lr, lg, lb] = lighten(base, 0.5); // brighter "star" / signal tone
     const lit = `${lr}, ${lg}, ${lb}`;

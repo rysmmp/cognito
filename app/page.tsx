@@ -9,7 +9,7 @@ export default function Landing() {
           <BrainLogo size={44} />
         </div>
 
-        <h1 className="font-display text-display-small font-medium text-on-surface">
+        <h1 className="font-display text-display-medium font-medium text-on-surface">
           Think about your thinking
         </h1>
 

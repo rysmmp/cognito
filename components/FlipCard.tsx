@@ -50,7 +50,7 @@ export function FlipCard({ scenario, onNext }: FlipCardProps) {
         <HudCorners />
         {!back ? (
           <>
-            <span className="mb-5 inline-flex h-8 items-center rounded-md-sm border border-outline-variant bg-surface-container px-3 font-mono text-label-medium uppercase tracking-[0.12em] text-on-surface-variant">
+            <span className="mb-5 inline-flex h-7 items-center rounded-md-sm border border-outline-variant bg-surface-container px-2.5 font-mono text-label-small uppercase tracking-[0.16em] text-on-surface-variant">
               {TYPE_LABEL[scenario.type]}
             </span>
             <HighlightText

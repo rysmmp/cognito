@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { feedbackTap } from "@/lib/sound";
 
 /**
  * M3 touch ripple. Drop as a child of any positioned, `overflow-hidden`
@@ -17,6 +18,7 @@ export function Ripple() {
     if (!el || !host) return;
 
     const onDown = (e: PointerEvent) => {
+      feedbackTap();
       const rect = host.getBoundingClientRect();
       const size = Math.max(rect.width, rect.height);
       const dot = document.createElement("span");

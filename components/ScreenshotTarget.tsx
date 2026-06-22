@@ -28,6 +28,7 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
       >
         <div
           ref={ref}
+          data-shot=""
           style={{
             width: 600,
             padding: 40,
@@ -39,7 +40,7 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
           <div
             style={{
               borderRadius: 12,
-              backgroundColor: "#0f141a",
+              backgroundColor: "#0f131a",
               border: "1px solid rgba(255,255,255,0.07)",
               padding: 36,
             }}
@@ -47,13 +48,13 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
             <div
               style={{
                 display: "inline-block",
-                border: "1px solid #344350",
+                border: "1px solid #3a424d",
                 borderRadius: 8,
                 padding: "5px 12px",
                 fontSize: 14,
                 fontWeight: 500,
                 letterSpacing: "0.1px",
-                color: "#9bb0bf",
+                color: "#9aa4b0",
                 marginBottom: 24,
               }}
             >
@@ -69,7 +70,7 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
                 justifyContent: "center",
                 borderRadius: 16,
                 backgroundColor: "#151b22",
-                color: "#5cc8ff",
+                color: "#d7dde5",
                 marginBottom: 20,
               }}
             >
@@ -81,7 +82,7 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
                 fontSize: 28,
                 fontWeight: 500,
                 lineHeight: 1.3,
-                color: "#5cc8ff",
+                color: "#d7dde5",
                 marginBottom: 20,
               }}
             >
@@ -92,11 +93,7 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
               style={{
                 fontSize: 16,
                 lineHeight: 1.5,
-                color: "#e6edf3",
-                display: "-webkit-box",
-                WebkitLineClamp: 4,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
+                color: "#e8ecf1",
               }}
             >
               {scenario.scenario}
@@ -110,7 +107,7 @@ export const ScreenshotTarget = forwardRef<HTMLDivElement, ScreenshotTargetProps
                 fontSize: 14,
                 fontWeight: 500,
                 letterSpacing: "0.1px",
-                color: "#6b7a88",
+                color: "#6b727c",
               }}
             >
               Cognito

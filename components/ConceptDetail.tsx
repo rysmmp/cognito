@@ -19,7 +19,7 @@ export function ConceptDetail({ id, model }: { id: string; model: Model }) {
         <div className="mb-4 grid h-12 w-12 place-items-center rounded-md-md bg-surface-container-high text-primary">
           <ModelIcon id={id} size={28} />
         </div>
-        <h2 className="font-display text-headline-small font-medium text-primary">{model.name}</h2>
+        <h2 className="font-display text-headline-medium font-medium text-primary">{model.name}</h2>
         <p className="mt-3 font-sans text-body-large text-on-surface">{model.short_definition}</p>
       </motion.div>
 

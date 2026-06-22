@@ -3,67 +3,67 @@
 @tailwind utilities;
 
 /* ============================================================
-   Visual direction: "Armory" — dark AI/neural, electric cyan-blue
-   accent, near-black surfaces, glassy cards + glow.
-   (Token names kept as --md-* so the whole app re-skins from here.)
+   Visual direction: monochromatic — a single cool-neutral (achromatic)
+   hue on near-black, expressed entirely through grayscale gradients.
+   No saturated accent. (Token names kept as --md-* so the app re-skins here.)
    ============================================================ */
 :root {
-  /* Primary — electric cyan-blue */
-  --md-primary: #5cc8ff;
-  --md-on-primary: #00344b;
-  --md-primary-container: #0c3d56;
-  --md-on-primary-container: #bfe9ff;
+  /* Primary — light cool gray (accent) */
+  --md-primary: #d7dde5;
+  --md-on-primary: #0a0d11;
+  --md-primary-container: #2b313a;
+  --md-on-primary-container: #e7ebf1;
 
-  /* Secondary — cool slate-cyan */
-  --md-secondary: #a8c7da;
-  --md-on-secondary: #0e2c3a;
-  --md-secondary-container: #143140;
-  --md-on-secondary-container: #cfe7f5;
+  /* Secondary — neutral gray */
+  --md-secondary: #b6bdc7;
+  --md-on-secondary: #11151a;
+  --md-secondary-container: #232830;
+  --md-on-secondary-container: #e2e6ec;
 
-  /* Tertiary — soft sky */
-  --md-tertiary: #8fd0ff;
-  --md-on-tertiary: #00344b;
-  --md-tertiary-container: #16384d;
-  --md-on-tertiary-container: #cfeaff;
+  /* Tertiary — neutral gray */
+  --md-tertiary: #c7ccd4;
+  --md-on-tertiary: #11151a;
+  --md-tertiary-container: #232830;
+  --md-on-tertiary-container: #e2e6ec;
 
-  /* Error */
-  --md-error: #ff8a80;
-  --md-on-error: #4e0a06;
-  --md-error-container: #7a1812;
-  --md-on-error-container: #ffdad6;
+  /* Error (semantic; kept muted) */
+  --md-error: #e6a3a0;
+  --md-on-error: #2a0a08;
+  --md-error-container: #5a201c;
+  --md-on-error-container: #f3dcdb;
 
-  /* Surfaces & background — near-black, cool tint */
+  /* Surfaces & background — near-black, cool neutral */
   --md-background: #07090c;
-  --md-on-background: #e6edf3;
+  --md-on-background: #e8ecf1;
   --md-surface: #07090c;
-  --md-on-surface: #e6edf3;
-  --md-surface-variant: #1b2530;
-  --md-on-surface-variant: #9bb0bf;
+  --md-on-surface: #e8ecf1;
+  --md-surface-variant: #232a33;
+  --md-on-surface-variant: #9aa4b0;
 
   /* Tonal surface containers (opaque fallbacks; .glass mixes in transparency) */
   --md-surface-container-lowest: #05070a;
   --md-surface-container-low: #0b0e13;
-  --md-surface-container: #0f141a;
-  --md-surface-container-high: #151b22;
-  --md-surface-container-highest: #1b222b;
+  --md-surface-container: #0f131a;
+  --md-surface-container-high: #161b22;
+  --md-surface-container-highest: #1c222b;
 
   /* Outline — hairlines */
-  --md-outline: #344350;
-  --md-outline-variant: #1c2630;
+  --md-outline: #3a424d;
+  --md-outline-variant: #1d242c;
 
   /* Inverse */
-  --md-inverse-surface: #e6edf3;
-  --md-inverse-on-surface: #1a2128;
-  --md-inverse-primary: #00668c;
+  --md-inverse-surface: #e8ecf1;
+  --md-inverse-on-surface: #1a2028;
+  --md-inverse-primary: #5b626c;
 
-  /* Highlight applied to scenario text on reveal (accent tone) */
-  --md-highlight: rgba(92, 200, 255, 0.2);
+  /* Highlight applied to scenario text on reveal (neutral tone) */
+  --md-highlight: rgba(255, 255, 255, 0.14);
 
-  /* Elevation shadows (deep) + an accent glow token */
+  /* Elevation shadows (deep) + a neutral glow token */
   --md-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.5), 0 1px 3px 1px rgba(0, 0, 0, 0.3);
   --md-elevation-2: 0 2px 6px 2px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.5);
   --md-elevation-3: 0 4px 12px 4px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.5);
-  --md-glow: 0 0 0 1px rgba(92, 200, 255, 0.1), 0 10px 50px -12px rgba(92, 200, 255, 0.25);
+  --md-glow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 10px 50px -12px rgba(255, 255, 255, 0.12);
 }
 
 @layer base {
@@ -163,7 +163,7 @@
   box-shadow: var(--md-glow);
 }
 
-/* Top-of-page ambient light beam (cyan), behind content. */
+/* Top-of-page ambient light beam (neutral), behind content. */
 .beam {
   position: fixed;
   inset: 0 0 auto 0;
@@ -172,18 +172,18 @@
   pointer-events: none;
   background: radial-gradient(
     60% 100% at 50% 0%,
-    rgba(92, 200, 255, 0.13),
+    rgba(255, 255, 255, 0.07),
     transparent 70%
   );
 }
 
-/* Glossy cyan gradient + glow for primary buttons. */
+/* Glossy monochrome gradient + glow for primary buttons. */
 .btn-accent {
-  background-image: linear-gradient(to bottom, #7ad3ff, #34b6f7);
-  box-shadow: 0 6px 24px -8px rgba(92, 200, 255, 0.6);
+  background-image: linear-gradient(to bottom, #f2f4f8, #c9d0da);
+  box-shadow: 0 6px 24px -8px rgba(255, 255, 255, 0.3);
 }
 .btn-accent:hover {
-  box-shadow: 0 8px 32px -6px rgba(92, 200, 255, 0.85);
+  box-shadow: 0 8px 32px -6px rgba(255, 255, 255, 0.45);
 }
 
 /* Translucent, blurred top app bar. */
@@ -202,8 +202,8 @@
   z-index: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(to right, rgba(92, 200, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(92, 200, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 44px 44px;
   -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 80%);
   mask-image: radial-gradient(ellipse at center, #000 35%, transparent 80%);

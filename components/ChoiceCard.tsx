@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import type { Scenario } from "@/lib/types";
-import { TYPE_LABEL } from "@/lib/types";
 import { fadeUp } from "@/lib/motion";
 import { HighlightText } from "./HighlightText";
 import { ConceptDetail } from "./ConceptDetail";
@@ -32,9 +31,6 @@ export function ChoiceCard({ scenario, onNext }: ChoiceCardProps) {
       <div className="lg:flex lg:items-start lg:gap-10">
         {/* LEFT — the dilemma */}
         <div className="lg:min-w-0 lg:flex-1">
-          <span className="mb-5 inline-flex h-8 items-center rounded-md-sm border border-outline-variant bg-surface-container px-3 font-mono text-label-medium uppercase tracking-[0.12em] text-on-surface-variant">
-            {TYPE_LABEL[scenario.type]}
-          </span>
           <HighlightText
             text={scenario.scenario}
             highlights={scenario.highlights}
@@ -71,7 +67,7 @@ export function ChoiceCard({ scenario, onNext }: ChoiceCardProps) {
                   animate="visible"
                   className="mb-6 rounded-md-md border border-outline-variant bg-surface-container px-4 py-3"
                 >
-                  <p className="font-mono text-label-medium uppercase tracking-[0.14em] text-secondary">
+                  <p className="font-mono text-label-small uppercase tracking-[0.16em] text-secondary">
                     Your answer
                   </p>
                   <p className="mt-1 font-sans text-body-medium text-on-surface-variant">
