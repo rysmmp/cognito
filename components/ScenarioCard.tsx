@@ -29,7 +29,7 @@ export function ScenarioCard({ scenario, onNext, revealLabels }: ScenarioCardPro
       <div className="lg:flex lg:items-start lg:gap-10">
         {/* LEFT — the scenario */}
         <div className="lg:min-w-0 lg:flex-1">
-          <span className="mb-5 inline-flex h-7 items-center rounded-md-sm border border-outline-variant bg-surface-container px-2.5 font-mono text-label-small uppercase tracking-[0.16em] text-on-surface-variant">
+          <span className="mb-5 inline-flex h-7 items-center rounded-md-sm border border-outline-variant bg-surface-container px-2.5 font-sans text-label-small font-medium uppercase tracking-[0.12em] text-on-surface-variant">
             {TYPE_LABEL[scenario.type]}
           </span>
           <HighlightText

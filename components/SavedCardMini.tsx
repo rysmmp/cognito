@@ -40,7 +40,7 @@ export function SavedCardMini({ item, onRemove }: SavedCardMiniProps) {
         <ModelIcon id={item.scenario_id} size={24} />
       </div>
 
-      <h3 className="pr-8 font-display text-title-large font-medium text-primary">
+      <h3 className="pr-8 font-sans text-title-large font-medium text-primary">
         {item.model_name}
       </h3>
 
@@ -48,7 +48,7 @@ export function SavedCardMini({ item, onRemove }: SavedCardMiniProps) {
         {item.scenario_text}
       </p>
 
-      <p className="mt-4 font-mono text-label-medium uppercase tracking-wide text-on-surface-variant">
+      <p className="mt-4 font-sans text-label-medium uppercase tracking-wide text-on-surface-variant">
         {formatDate(item.saved_at)}
       </p>
     </div>

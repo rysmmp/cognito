@@ -1,30 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Particles } from "@/components/Particles";
 import { PwaRegister } from "@/components/PwaRegister";
 import { SnackbarProvider } from "@/components/Snackbar";
 
-// Inter for body/UI; Space Grotesk for display/headings — a modern,
-// tech-forward pairing. Exposed as --font-sans / --font-display.
+// Inter — sans serif for the whole app. Exposed as --font-sans.
 const sans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap",
-});
-
-const display = Space_Grotesk({
-  weight: ["500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-// Monospace for instrument-style labels (chips, eyebrows, badges).
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
   display: "swap",
 });
 
@@ -60,10 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${sans.variable} ${display.variable} ${mono.variable}`}
-    >
+    <html lang="en" className={sans.variable}>
       <body className="min-h-screen bg-background text-on-surface antialiased">
         <SnackbarProvider>
           <div className="beam" aria-hidden="true" />

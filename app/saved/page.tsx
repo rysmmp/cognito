@@ -11,7 +11,7 @@ export default function SavedPage() {
   return (
     <main className="flex flex-1 flex-col px-4 py-10">
       <div className="mx-auto w-full max-w-[680px] lg:max-w-[960px]">
-        <h1 className="font-display text-headline-large font-medium text-on-surface">
+        <h1 className="font-sans text-headline-large font-medium text-on-surface">
           Your saved
         </h1>
 

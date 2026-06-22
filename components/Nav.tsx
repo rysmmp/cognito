@@ -59,7 +59,7 @@ export function Nav() {
         <span className="relative z-[1] inline-flex items-center gap-1.5">
           <Icon className="h-[18px] w-[18px] shrink-0" />
           {badge != null && badge > 0 && (
-            <span className="grid h-4 min-w-4 place-items-center rounded-md-full bg-primary px-1 font-mono text-label-small font-medium text-on-primary">
+            <span className="grid h-4 min-w-4 place-items-center rounded-md-full bg-primary px-1 font-sans text-label-small font-medium text-on-primary">
               {badge > 99 ? "99+" : badge}
             </span>
           )}
@@ -75,7 +75,7 @@ export function Nav() {
         <Link
           href="/"
           aria-label="Cognito home"
-          className="md-state relative -mx-1 flex items-center gap-2 overflow-hidden rounded-md-full px-2 py-1 font-display text-title-large font-medium text-on-surface"
+          className="md-state relative -mx-1 flex items-center gap-2 overflow-hidden rounded-md-full px-2 py-1 font-sans text-title-large font-medium text-on-surface"
         >
           <Ripple />
           <span className="relative z-[1] flex items-center gap-2">

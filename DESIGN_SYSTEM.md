@@ -54,10 +54,9 @@ grid).
 
 ## Typography
 
-**Typefaces:** **Inter** for body/UI (`--font-sans` → `font-sans`) and **Space
-Grotesk** for display/headings (`--font-display` → `font-display`), loaded via
-`next/font` in `app/layout.tsx`. Apply `font-display` to large headings (brand,
-landing h1, concept name, page titles); everything else uses `font-sans`.
+**Typeface:** **Inter** (sans serif) everywhere — body, UI, headings, and labels.
+Loaded via `next/font` in `app/layout.tsx` and exposed as `--font-sans` →
+`font-sans`. No display or monospace faces.
 
 The full M3 type scale lives in `tailwind.config.ts` under `fontSize`. Use the
 token class — never an arbitrary `text-[..px]`.

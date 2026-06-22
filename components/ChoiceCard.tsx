@@ -67,7 +67,7 @@ export function ChoiceCard({ scenario, onNext }: ChoiceCardProps) {
                   animate="visible"
                   className="mb-6 rounded-md-md border border-outline-variant bg-surface-container px-4 py-3"
                 >
-                  <p className="font-mono text-label-small uppercase tracking-[0.16em] text-secondary">
+                  <p className="font-sans text-label-small font-medium uppercase tracking-[0.12em] text-secondary">
                     Your answer
                   </p>
                   <p className="mt-1 font-sans text-body-medium text-on-surface-variant">
