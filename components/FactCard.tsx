@@ -33,11 +33,11 @@ export function FactCard({ fact, onNext }: FactCardProps) {
       </span>
 
       <div className="flex items-start gap-5 sm:gap-8">
+        <div className="grid h-28 w-28 shrink-0 place-items-center self-center rounded-md-md border border-outline-variant bg-surface-container-high text-on-surface-variant">
+          <TypeIllustration id="obscure" size={84} />
+        </div>
         <div className="min-w-0 flex-1">
           <HighlightText text={fact.fact} highlights={[]} active />
-        </div>
-        <div className="shrink-0 self-center text-on-surface-variant">
-          <TypeIllustration id="obscure" size={104} />
         </div>
       </div>
 

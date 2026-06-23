@@ -40,8 +40,13 @@ export function ScenarioCard({ scenario, onNext, revealLabels, category }: Scena
             </span>
             {revealed && <ReadAloud scenario={scenario} />}
           </div>
-          {/* Scenario info with the illustration to its right (until revealed). */}
+          {/* Scenario info with the boxed illustration to its left (until revealed). */}
           <div className="flex items-start gap-5 sm:gap-8">
+            {!revealed && (
+              <div className="grid h-28 w-28 shrink-0 place-items-center self-center rounded-md-md border border-outline-variant bg-surface-container-high text-on-surface-variant">
+                <TypeIllustration id={illoId} size={84} />
+              </div>
+            )}
             <div className="min-w-0 flex-1">
               <HighlightText
                 text={scenario.scenario}
@@ -49,11 +54,6 @@ export function ScenarioCard({ scenario, onNext, revealLabels, category }: Scena
                 active={revealed}
               />
             </div>
-            {!revealed && (
-              <div className="shrink-0 self-center text-on-surface-variant">
-                <TypeIllustration id={illoId} size={104} />
-              </div>
-            )}
           </div>
         </div>
 
