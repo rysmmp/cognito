@@ -3,7 +3,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useScenario } from "@/hooks/useScenario";
 import { cardSwap } from "@/lib/motion";
-import { cn } from "@/lib/utils";
 import { ScenarioCard } from "./ScenarioCard";
 import { ChoiceCard } from "./ChoiceCard";
 import { FlipCard } from "./FlipCard";
@@ -33,12 +32,7 @@ export function ScenarioStream({
 
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-4 py-10">
-      <div
-        className={cn(
-          "w-full",
-          mode === "flip" ? "max-w-[680px]" : "max-w-[680px] lg:max-w-[960px]",
-        )}
-      >
+      <div className="w-full max-w-[720px]">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={currentScenario.id}

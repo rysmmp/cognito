@@ -43,7 +43,7 @@ export function FlipCard({ scenario, onNext }: FlipCardProps) {
   };
 
   return (
-    <div className="mx-auto w-full max-w-[680px]" style={{ perspective: 1200 }}>
+    <div className="mx-auto w-full max-w-[720px]" style={{ perspective: 1200 }}>
       <motion.article
         animate={controls}
         style={{ transformStyle: "preserve-3d" }}
@@ -55,29 +55,29 @@ export function FlipCard({ scenario, onNext }: FlipCardProps) {
             <span className="mb-5 inline-flex h-7 items-center rounded-md-sm border border-outline-variant bg-surface-container px-2.5 font-sans text-label-small font-medium uppercase tracking-[0.12em] text-on-surface-variant">
               {TYPE_LABEL[scenario.type]}
             </span>
-            <div className="flex items-start gap-5 sm:gap-8">
-              <div className="grid h-28 w-28 shrink-0 place-items-center self-center rounded-md-md border border-outline-variant bg-surface-container-high text-on-surface-variant">
+            <div>
+              <div className="float-left mb-4 mr-5 grid h-28 w-28 place-items-center rounded-md-md border border-outline-variant bg-surface-container-high text-on-surface-variant sm:mr-7">
                 <TypeIllustration id={scenario.type} size={84} />
               </div>
-              <div className="min-w-0 flex-1">
-                <HighlightText
-                  text={scenario.scenario}
-                  highlights={scenario.highlights}
-                  active={false}
-                />
-              </div>
+              <HighlightText
+                text={scenario.scenario}
+                highlights={scenario.highlights}
+                active={false}
+              />
             </div>
-            <button
-              type="button"
-              onClick={flip}
-              className="btn-accent md-state relative mt-7 inline-flex h-10 w-full items-center justify-center gap-2 overflow-hidden rounded-md-full px-6 font-sans text-label-large font-medium text-on-primary"
-            >
-              <Ripple />
-              <span className="relative z-[1] inline-flex items-center gap-2">
-                <Eye className="h-[18px] w-[18px]" />
-                Reveal the answer
-              </span>
-            </button>
+            <div className="mt-7 flex justify-end clear-both">
+              <button
+                type="button"
+                onClick={flip}
+                className="btn-accent md-state relative inline-flex h-10 items-center justify-center gap-2 overflow-hidden rounded-md-full px-6 font-sans text-label-large font-medium text-on-primary"
+              >
+                <Ripple />
+                <span className="relative z-[1] inline-flex items-center gap-2">
+                  <Eye className="h-[18px] w-[18px]" />
+                  Reveal the answer
+                </span>
+              </button>
+            </div>
           </>
         ) : (
           <>
