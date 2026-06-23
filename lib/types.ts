@@ -24,6 +24,13 @@ export interface Scenario {
   choices?: string[];
 }
 
+export interface ObscureFact {
+  id: string;
+  fact: string;
+  detail: string;
+  tag: string;
+}
+
 export interface SavedItem {
   scenario_id: string;
   model_name: string;

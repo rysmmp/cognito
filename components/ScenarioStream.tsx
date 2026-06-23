@@ -21,10 +21,13 @@ export function ScenarioStream({
   data,
   mode = "reveal",
   revealLabels,
+  category,
 }: {
   data: Scenario[];
   mode?: StreamMode;
   revealLabels?: RevealLabels;
+  /** Section name, used to pick the cover illustration (e.g. "intelligence"). */
+  category?: string;
 }) {
   const { currentScenario, nextScenario } = useScenario(data);
 
@@ -53,6 +56,7 @@ export function ScenarioStream({
                 scenario={currentScenario}
                 onNext={nextScenario}
                 revealLabels={revealLabels}
+                category={category}
               />
             )}
           </motion.div>

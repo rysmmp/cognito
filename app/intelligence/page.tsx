@@ -8,6 +8,7 @@ export default function Intelligence() {
       data={intelligencesData as Scenario[]}
       mode="reveal"
       revealLabels={{ hidden: "Reveal" }}
+      category="intelligence"
     />
   );
 }

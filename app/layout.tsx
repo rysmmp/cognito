@@ -48,7 +48,6 @@ export default function RootLayout({
     <html lang="en" className={sans.variable}>
       <body className="min-h-screen bg-background text-on-surface antialiased">
         <SnackbarProvider>
-          <div className="beam" aria-hidden="true" />
           <div className="grid-overlay" aria-hidden="true" />
           <Particles />
           <div className="relative z-10 flex min-h-screen flex-col">

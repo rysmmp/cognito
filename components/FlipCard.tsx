@@ -9,6 +9,8 @@ import { HighlightText } from "./HighlightText";
 import { ConceptDetail } from "./ConceptDetail";
 import { CardActions } from "./CardActions";
 import { HudCorners } from "./HudCorners";
+import { ReadAloud } from "./ReadAloud";
+import { TypeIllustration } from "./TypeIllustration";
 import { Ripple } from "./ui/Ripple";
 
 interface FlipCardProps {
@@ -45,7 +47,7 @@ export function FlipCard({ scenario, onNext }: FlipCardProps) {
       <motion.article
         animate={controls}
         style={{ transformStyle: "preserve-3d" }}
-        className="glass glow relative rounded-md-md p-6 sm:p-8"
+        className="glass relative rounded-md-md p-6 sm:p-8"
       >
         <HudCorners />
         {!back ? (
@@ -53,11 +55,18 @@ export function FlipCard({ scenario, onNext }: FlipCardProps) {
             <span className="mb-5 inline-flex h-7 items-center rounded-md-sm border border-outline-variant bg-surface-container px-2.5 font-sans text-label-small font-medium uppercase tracking-[0.12em] text-on-surface-variant">
               {TYPE_LABEL[scenario.type]}
             </span>
-            <HighlightText
-              text={scenario.scenario}
-              highlights={scenario.highlights}
-              active={false}
-            />
+            <div className="flex items-start gap-5 sm:gap-8">
+              <div className="min-w-0 flex-1">
+                <HighlightText
+                  text={scenario.scenario}
+                  highlights={scenario.highlights}
+                  active={false}
+                />
+              </div>
+              <div className="shrink-0 self-center text-on-surface-variant">
+                <TypeIllustration id={scenario.type} size={104} />
+              </div>
+            </div>
             <button
               type="button"
               onClick={flip}
@@ -72,6 +81,9 @@ export function FlipCard({ scenario, onNext }: FlipCardProps) {
           </>
         ) : (
           <>
+            <div className="mb-5">
+              <ReadAloud scenario={scenario} />
+            </div>
             <ConceptDetail id={scenario.id} model={scenario.model} />
             <button
               type="button"

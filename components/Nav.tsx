@@ -8,6 +8,7 @@ import {
   Lightbulb,
   Puzzle,
   Shapes,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -26,6 +27,7 @@ const CATEGORIES: NavItem[] = [
   { href: "/intelligence", label: "Intelligence", Icon: Lightbulb },
   { href: "/fallacies", label: "Fallacies", Icon: AlertTriangle },
   { href: "/puzzles", label: "Puzzles", Icon: Puzzle },
+  { href: "/obscure", label: "Obscure", Icon: Sparkles },
 ];
 
 const SAVED: NavItem = { href: "/saved", label: "Saved", Icon: Bookmark };
@@ -63,7 +65,7 @@ export function Nav() {
               {badge > 99 ? "99+" : badge}
             </span>
           )}
-          <span className="hidden sm:inline">{item.label}</span>
+          <span className="hidden lg:inline">{item.label}</span>
         </span>
       </Link>
     );
@@ -75,17 +77,11 @@ export function Nav() {
         <Link
           href="/"
           aria-label="Cognito home"
-          className="md-state relative -mx-1 flex items-center gap-2 overflow-hidden rounded-md-full px-2 py-1 font-sans text-title-large font-medium text-on-surface"
+          className="md-state relative -ml-1.5 flex items-center overflow-hidden rounded-md-full p-1.5 text-on-surface"
         >
           <Ripple />
-          <span className="relative z-[1] flex items-center gap-2">
-            <BrainLogo className="text-primary" size={26} />
-            <span className="hidden sm:inline">Cognito</span>
-            {/* live status dot */}
-            <span className="relative ml-0.5 flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-md-full bg-primary opacity-60" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-md-full bg-primary" />
-            </span>
+          <span className="relative z-[1] flex items-center">
+            <BrainLogo className="text-primary" size={28} />
           </span>
         </Link>
 

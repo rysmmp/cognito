@@ -1,0 +1,320 @@
+[
+  {
+    "id": "cleopatra-pyramids",
+    "fact": "Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid.",
+    "detail": "The Great Pyramid was completed around 2560 BC and Cleopatra died in 30 BC — about 2,500 years apart. The 1969 Moon landing was under 2,000 years after her, so she's closer to Apollo 11 than to the pyramid builders.",
+    "tag": "history"
+  },
+  {
+    "id": "chess-atoms",
+    "fact": "There are more possible games of chess than atoms in the observable universe.",
+    "detail": "The number of distinct chess games is roughly 10^120 (the Shannon number), while the universe holds about 10^80 atoms — a gap so vast no computer could ever enumerate every game.",
+    "tag": "mathematics"
+  },
+  {
+    "id": "deck-shuffle",
+    "fact": "Any thoroughly shuffled deck of 52 cards has almost certainly never existed before in history.",
+    "detail": "There are 52! (about 8 followed by 67 zeros) possible orderings. That number dwarfs the count of shuffles ever performed by everyone who has ever lived, so each new shuffle is effectively unique.",
+    "tag": "mathematics"
+  },
+  {
+    "id": "honey-never-spoils",
+    "fact": "Honey never spoils — edible honey has been found in 3,000-year-old Egyptian tombs.",
+    "detail": "Honey's very low moisture and high acidity make it hostile to bacteria, and bees add an enzyme that yields a little hydrogen peroxide. Sealed and dry, it lasts virtually forever.",
+    "tag": "science"
+  },
+  {
+    "id": "octopus-hearts",
+    "fact": "Octopuses have three hearts and blue, copper-based blood.",
+    "detail": "Two hearts pump blood through the gills and one to the body. Their blood uses hemocyanin — copper rather than iron — which is blue and works better in cold, low-oxygen water.",
+    "tag": "biology"
+  },
+  {
+    "id": "venus-day",
+    "fact": "A day on Venus is longer than a year on Venus.",
+    "detail": "Venus rotates once every 243 Earth days but orbits the Sun in about 225. It also spins backwards, so the Sun there would rise in the west.",
+    "tag": "astronomy"
+  },
+  {
+    "id": "sharks-older-than-trees",
+    "fact": "Sharks are older than trees.",
+    "detail": "Sharks have existed for around 450 million years; the first true trees appeared roughly 390 million years ago. Sharks were ancient before forests existed.",
+    "tag": "biology"
+  },
+  {
+    "id": "bananas-berries",
+    "fact": "Bananas are berries, but strawberries aren't.",
+    "detail": "Botanically a berry comes from a single flower with one ovary and internal seeds — true of bananas, grapes, and tomatoes. A strawberry forms from many ovaries, making it an aggregate accessory fruit.",
+    "tag": "biology"
+  },
+  {
+    "id": "eiffel-grows",
+    "fact": "The Eiffel Tower can be more than 15 cm taller in summer than in winter.",
+    "detail": "Iron expands when heated, so on a hot day the tower's metal grows and its top rises by up to about 15 centimetres. It can also lean slightly away from the sun.",
+    "tag": "physics"
+  },
+  {
+    "id": "wombat-cubes",
+    "fact": "Wombats are the only animals known to produce cube-shaped poop.",
+    "detail": "Regions of differing stiffness in their intestines mould droppings into rough cubes as they dry. The cubes don't roll away, helping wombats stack them to mark territory.",
+    "tag": "biology"
+  },
+  {
+    "id": "more-trees-than-stars",
+    "fact": "There are more trees on Earth than stars in the Milky Way.",
+    "detail": "Earth has an estimated 3 trillion trees, while the Milky Way holds roughly 100 to 400 billion stars. One small planet's trees outnumber an entire galaxy's stars.",
+    "tag": "science"
+  },
+  {
+    "id": "oxford-older-than-aztecs",
+    "fact": "Oxford University is older than the Aztec Empire.",
+    "detail": "Teaching at Oxford is recorded as early as 1096 and it was well established by 1249. Tenochtitlan, the Aztec capital, was only founded in 1325.",
+    "tag": "history"
+  },
+  {
+    "id": "shortest-war",
+    "fact": "The shortest war in history lasted about 38 minutes.",
+    "detail": "The Anglo-Zanzibar War of 1896 ended in under an hour after British ships bombarded the Sultan's palace following a disputed succession.",
+    "tag": "history"
+  },
+  {
+    "id": "neutron-star-spoon",
+    "fact": "A teaspoon of neutron-star material would weigh about a billion tons on Earth.",
+    "detail": "Neutron stars are collapsed stellar cores so dense that protons and electrons are crushed into neutrons. A sugar-cube-sized piece holds roughly the mass of all humanity.",
+    "tag": "astronomy"
+  },
+  {
+    "id": "dna-bananas",
+    "fact": "Humans share about 60% of their DNA with bananas.",
+    "detail": "Core cellular machinery — copying DNA, building proteins, managing energy — is deeply conserved across life, so its genes look similar even in very different organisms. It reflects ancient common ancestry, not that we're part banana.",
+    "tag": "biology"
+  },
+  {
+    "id": "mpemba-effect",
+    "fact": "Hot water can sometimes freeze faster than cold water.",
+    "detail": "Called the Mpemba effect, it has been noticed since Aristotle yet still isn't fully explained. Proposed causes include evaporation, convection, dissolved gases, and hydrogen-bond behaviour.",
+    "tag": "physics"
+  },
+  {
+    "id": "bubble-wrap-wallpaper",
+    "fact": "Bubble wrap was originally invented as wallpaper.",
+    "detail": "In 1957 its inventors sealed two shower curtains together to make a textured 3D wall covering. It flopped as decor and only later found its purpose as protective packaging.",
+    "tag": "history"
+  },
+  {
+    "id": "gallium-melts",
+    "fact": "The metal gallium melts in your hand.",
+    "detail": "Gallium is solid at room temperature but melts at about 30 degrees Celsius — below body temperature — so a piece held in your palm slowly turns to liquid.",
+    "tag": "science"
+  },
+  {
+    "id": "banana-radioactive",
+    "fact": "Bananas are slightly radioactive.",
+    "detail": "They are rich in potassium, and a tiny fraction of natural potassium is the radioactive isotope potassium-40. The dose is harmless — scientists even jokingly measure radiation in 'banana equivalent doses'.",
+    "tag": "science"
+  },
+  {
+    "id": "lightning-frequency",
+    "fact": "Lightning strikes Earth about 8 million times a day.",
+    "detail": "That's roughly 100 bolts every second across the planet. A single bolt can be about five times hotter than the surface of the Sun.",
+    "tag": "physics"
+  },
+  {
+    "id": "brain-energy",
+    "fact": "Your brain uses about 20% of your energy while being only 2% of your weight.",
+    "detail": "Maintaining and firing billions of neurons is metabolically expensive, so this small organ is by far the body's most energy-hungry per gram.",
+    "tag": "biology"
+  },
+  {
+    "id": "antarctica-desert",
+    "fact": "Antarctica is the largest desert on Earth.",
+    "detail": "A desert is defined by how little precipitation it gets, not by heat. Antarctica's interior is one of the driest places on the planet, making the frozen continent a desert.",
+    "tag": "geography"
+  },
+  {
+    "id": "tardigrades-space",
+    "fact": "Tardigrades can survive the vacuum of space.",
+    "detail": "These microscopic 'water bears' can enter a dried-out state and endure boiling, freezing, crushing pressure, and intense radiation. In 2007 some survived direct exposure to open space.",
+    "tag": "biology"
+  },
+  {
+    "id": "tittle",
+    "fact": "The dot over a lowercase 'i' or 'j' has a name: the tittle.",
+    "detail": "It comes from the same Latin root as 'title' and 'titrate', meaning a small mark — which is exactly what it is.",
+    "tag": "language"
+  },
+  {
+    "id": "saturn-floats",
+    "fact": "Saturn would float in water.",
+    "detail": "Its average density is about 0.69 grams per cubic centimetre — less than water's 1.0 — because it's mostly hydrogen and helium. Given a big enough ocean, the planet would bob on top.",
+    "tag": "astronomy"
+  },
+  {
+    "id": "sunlight-delay",
+    "fact": "The sunlight you see left the Sun about 8 minutes ago.",
+    "detail": "Light travels roughly 300,000 km per second, and the Sun is about 150 million km away, so it takes about 8 minutes and 20 seconds to reach Earth. You always see the Sun as it was, not as it is.",
+    "tag": "astronomy"
+  },
+  {
+    "id": "pringles-can",
+    "fact": "The inventor of the Pringles can was buried in one.",
+    "detail": "Fredric Baur designed the iconic tube and was so proud of it that he asked for part of his ashes to be placed inside one after he died in 2008. His family obliged.",
+    "tag": "history"
+  },
+  {
+    "id": "pluto-orbit",
+    "fact": "Pluto still hasn't completed one orbit since it was discovered.",
+    "detail": "It was found in 1930, and a Pluto year lasts about 248 Earth years. It won't finish the lap it was on at discovery until around 2178.",
+    "tag": "astronomy"
+  },
+  {
+    "id": "qwerty-origin",
+    "fact": "The QWERTY keyboard layout is over 150 years old.",
+    "detail": "It was designed in the 1870s for early typewriters, partly to separate common letter pairs so the mechanical type-bars jammed less often. We still use it long after the jamming problem vanished.",
+    "tag": "history"
+  },
+  {
+    "id": "sound-water",
+    "fact": "Sound travels more than four times faster in water than in air.",
+    "detail": "It moves at roughly 1,480 metres per second in water versus about 340 in air, because water's molecules are packed closely enough to pass the vibration along far more quickly.",
+    "tag": "physics"
+  },
+  {
+    "id": "oldest-tree",
+    "fact": "The oldest known individual tree is nearly 5,000 years old.",
+    "detail": "A bristlecone pine in California has been growing for over 4,800 years — it was already ancient when the Great Pyramid was built.",
+    "tag": "biology"
+  },
+  {
+    "id": "stomach-lining",
+    "fact": "Your stomach gets a new lining every few days.",
+    "detail": "Stomach acid is strong enough to dissolve metal, so the organ constantly replaces its protective mucus and cells to avoid digesting itself.",
+    "tag": "biology"
+  },
+  {
+    "id": "octopus-taste-arms",
+    "fact": "Octopuses can taste with their arms.",
+    "detail": "Their suckers are lined with chemoreceptors, so an octopus can literally taste whatever it touches without bringing it to its mouth.",
+    "tag": "biology"
+  },
+  {
+    "id": "earth-core-heat",
+    "fact": "Earth's inner core is about as hot as the surface of the Sun.",
+    "detail": "The core reaches roughly 5,200 to 5,400 degrees Celsius, comparable to the Sun's visible surface — a tiny sun buried beneath thousands of kilometres of rock.",
+    "tag": "science"
+  },
+  {
+    "id": "bees-faces",
+    "fact": "Honeybees can recognise individual human faces.",
+    "detail": "Despite tiny brains, bees learn to tell faces apart by treating them as patterns of features — the same general strategy our own visual system uses.",
+    "tag": "biology"
+  },
+  {
+    "id": "ada-lovelace",
+    "fact": "The first computer programmer worked in the 1840s — before computers existed.",
+    "detail": "Ada Lovelace wrote an algorithm for Charles Babbage's never-built Analytical Engine and foresaw that such machines could do more than crunch numbers, roughly a century before modern computers.",
+    "tag": "history"
+  },
+  {
+    "id": "venus-hottest",
+    "fact": "Venus is hotter than Mercury, even though Mercury is closer to the Sun.",
+    "detail": "Venus's thick carbon-dioxide atmosphere traps heat in a runaway greenhouse effect, holding surface temperatures around 465 degrees Celsius — hot enough to melt lead.",
+    "tag": "astronomy"
+  },
+  {
+    "id": "jiffy-unit",
+    "fact": "A 'jiffy' is a real unit of time.",
+    "detail": "In physics it can mean the time light takes to travel one centimetre — about 33 trillionths of a second. So 'back in a jiffy' is a very optimistic promise.",
+    "tag": "physics"
+  },
+  {
+    "id": "hawaiian-alphabet",
+    "fact": "The Hawaiian alphabet has only 13 letters.",
+    "detail": "It uses five vowels, eight consonants, and a glottal-stop mark called the okina — far fewer symbols than English's 26.",
+    "tag": "language"
+  },
+  {
+    "id": "green-sahara",
+    "fact": "The Sahara was green, with lakes and wildlife, just a few thousand years ago.",
+    "detail": "During the African Humid Period, ending around 5,000 to 6,000 years ago, the region had grasslands, rivers, and animals like hippos and crocodiles. Rock art there still shows them.",
+    "tag": "geography"
+  },
+  {
+    "id": "rubiks-combinations",
+    "fact": "A Rubik's Cube has about 43 quintillion possible arrangements.",
+    "detail": "The exact figure is 43,252,003,274,489,856,000, yet any scramble can always be solved in 20 moves or fewer — a limit mathematicians call 'God's number'.",
+    "tag": "mathematics"
+  },
+  {
+    "id": "sea-otters-hands",
+    "fact": "Sea otters hold hands while they sleep.",
+    "detail": "They link paws, and sometimes wrap themselves in kelp, so the current doesn't drift them apart while they rest on the water's surface.",
+    "tag": "biology"
+  },
+  {
+    "id": "bones-concrete",
+    "fact": "Bone is stronger than concrete, pound for pound.",
+    "detail": "Bone combines a mineral that resists compression with collagen fibres that resist bending, giving it a strength-to-weight ratio that outperforms concrete and rivals some steels.",
+    "tag": "science"
+  },
+  {
+    "id": "eiffel-temporary",
+    "fact": "The Eiffel Tower was supposed to be torn down after 20 years.",
+    "detail": "Built as a temporary entrance arch for the 1889 World's Fair, it survived mainly because it proved useful as a giant radio and telegraph antenna.",
+    "tag": "history"
+  },
+  {
+    "id": "moon-drifting",
+    "fact": "The Moon drifts about 3.8 cm farther from Earth every year.",
+    "detail": "Tidal interactions transfer energy that nudges the Moon outward and very gradually slows Earth's spin — meaning days are slowly getting longer.",
+    "tag": "astronomy"
+  },
+  {
+    "id": "stars-vs-sand",
+    "fact": "There are more stars in the universe than grains of sand on all of Earth's beaches.",
+    "detail": "Estimates put beach sand grains around 10^18 to 10^19, while the observable universe holds something like 10^22 to 10^24 stars — astronomers think starlight wins by far.",
+    "tag": "astronomy"
+  },
+  {
+    "id": "set-definitions",
+    "fact": "The word 'set' has more distinct meanings than almost any other English word.",
+    "detail": "The Oxford English Dictionary once gave it hundreds of senses — as a verb, noun, and adjective — making this tiny three-letter word one of the most overloaded in the language.",
+    "tag": "language"
+  },
+  {
+    "id": "blue-whale-heart",
+    "fact": "A blue whale's heart is about the size of a small car.",
+    "detail": "It can weigh several hundred kilograms and beats only a handful of times per minute when the whale dives. A human could theoretically crawl through its largest blood vessels.",
+    "tag": "biology"
+  },
+  {
+    "id": "mercury-solar-day",
+    "fact": "On Mercury, a single day-night cycle lasts two of its years.",
+    "detail": "Mercury spins slowly relative to its fast orbit, so although it circles the Sun every 88 Earth days, the time from one sunrise to the next is about 176 Earth days.",
+    "tag": "astronomy"
+  },
+  {
+    "id": "glass-not-liquid",
+    "fact": "Old window glass isn't thicker at the bottom because it 'flowed' over centuries.",
+    "detail": "That popular myth is false; glass is an amorphous solid that doesn't flow at room temperature. Old panes are uneven simply because of how they were made by hand.",
+    "tag": "science"
+  },
+  {
+    "id": "human-smell",
+    "fact": "Humans may be able to distinguish around a trillion different smells.",
+    "detail": "A 2014 study estimated our noses can tell apart vastly more scents than the old textbook figure of 10,000 — by combining a few hundred receptor types in countless patterns.",
+    "tag": "biology"
+  },
+  {
+    "id": "fastest-spinning",
+    "fact": "Some pulsars spin hundreds of times every second.",
+    "detail": "These dense, magnetised neutron stars sweep beams of radiation around like cosmic lighthouses; the fastest known rotates over 700 times per second — faster than a kitchen blender.",
+    "tag": "astronomy"
+  },
+  {
+    "id": "ant-biomass",
+    "fact": "All the ants on Earth together weigh a remarkable amount — comparable to all wild birds and mammals combined.",
+    "detail": "A 2022 study estimated about 20 quadrillion ants, with a combined dry weight on the order of tens of millions of tonnes — a stunning total for such tiny insects.",
+    "tag": "biology"
+  }
+]

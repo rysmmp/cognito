@@ -19,6 +19,19 @@ function escapeRegExp(s: string): string {
 }
 
 /**
+ * Salient anchors highlighted automatically (in addition to the curated
+ * phrases): money, percentages, grouped numbers, and quoted phrases.
+ */
+const AUTO_SOURCES = [
+  String.raw`\$\d[\d,]*(?:\.\d+)?`, // money: $2,000
+  String.raw`\d[\d,]*(?:\.\d+)?%`, // percentages: 30%, 9%
+  String.raw`\d{1,3}(?:,\d{3})+`, // grouped numbers: 1,000
+  `"[^"]{2,}"`, // straight-quoted phrase
+  "“[^”]{2,}”", // curly-quoted phrase
+];
+const AUTO_TEST = new RegExp(`^(?:${AUTO_SOURCES.join("|")})$`);
+
+/**
  * Split prose into sentences, keeping terminal punctuation. Only breaks when the
  * next sentence starts with an uppercase letter, digit, or opening quote — so
  * abbreviations like "U.S." (followed by a lowercase word) are left intact.
@@ -32,13 +45,18 @@ function splitSentences(text: string): string[] {
 
 /** Break a single sentence into highlighted / plain segments. */
 function segmentSentence(sentence: string, phrases: string[]): Segment[] {
-  if (phrases.length === 0) return [{ value: sentence, highlighted: false }];
-  const pattern = new RegExp(`(${phrases.map(escapeRegExp).join("|")})`, "gi");
+  // Curated phrases first (so they win over the auto patterns), then the
+  // automatic anchors.
+  const sources = [...phrases.map(escapeRegExp), ...AUTO_SOURCES];
+  const pattern = new RegExp(`(${sources.join("|")})`, "gi");
   const lower = new Set(phrases.map((p) => p.toLowerCase()));
   return sentence
     .split(pattern)
     .filter((p) => p.length > 0)
-    .map((p) => ({ value: p, highlighted: lower.has(p.toLowerCase()) }));
+    .map((p) => ({
+      value: p,
+      highlighted: lower.has(p.toLowerCase()) || AUTO_TEST.test(p),
+    }));
 }
 
 /**

@@ -33,18 +33,23 @@ export function useSaved() {
     };
   }, []);
 
-  const save = useCallback((scenario: Scenario) => {
-    const item: SavedItem = {
-      scenario_id: scenario.id,
-      model_name: scenario.model.name,
-      scenario_text: scenario.scenario,
-      short_definition: scenario.model.short_definition,
-      saved_at: new Date().toISOString(),
-    };
-    saveItem(item);
+  /** Save a pre-built record (used by sections that aren't Scenario-shaped). */
+  const saveRecord = useCallback((record: Omit<SavedItem, "saved_at">) => {
+    saveItem({ ...record, saved_at: new Date().toISOString() });
     setSaved(getSaved());
     window.dispatchEvent(new Event(SAVED_CHANGE_EVENT));
   }, []);
+
+  const save = useCallback(
+    (scenario: Scenario) =>
+      saveRecord({
+        scenario_id: scenario.id,
+        model_name: scenario.model.name,
+        scenario_text: scenario.scenario,
+        short_definition: scenario.model.short_definition,
+      }),
+    [saveRecord],
+  );
 
   const remove = useCallback((id: string) => {
     removeItem(id);
@@ -57,5 +62,5 @@ export function useSaved() {
     [saved],
   );
 
-  return { saved, save, remove, isSaved };
+  return { saved, save, saveRecord, remove, isSaved };
 }

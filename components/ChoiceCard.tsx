@@ -8,6 +8,8 @@ import { HighlightText } from "./HighlightText";
 import { ConceptDetail } from "./ConceptDetail";
 import { CardActions } from "./CardActions";
 import { HudCorners } from "./HudCorners";
+import { ReadAloud } from "./ReadAloud";
+import { TypeIllustration } from "./TypeIllustration";
 import { Ripple } from "./ui/Ripple";
 
 interface ChoiceCardProps {
@@ -26,16 +28,30 @@ export function ChoiceCard({ scenario, onNext }: ChoiceCardProps) {
   const answered = picked !== null;
 
   return (
-    <article className="glass glow relative mx-auto w-full max-w-[680px] rounded-md-md p-6 sm:p-8 lg:max-w-[960px]">
+    <article className="glass relative mx-auto w-full max-w-[680px] rounded-md-md p-6 sm:p-8 lg:max-w-[960px]">
       <HudCorners />
       <div className="lg:flex lg:items-start lg:gap-10">
-        {/* LEFT — the dilemma */}
+        {/* LEFT — the dilemma; read-aloud joins once answered */}
         <div className="lg:min-w-0 lg:flex-1">
-          <HighlightText
-            text={scenario.scenario}
-            highlights={scenario.highlights}
-            active={answered}
-          />
+          {answered && (
+            <div className="mb-5">
+              <ReadAloud scenario={scenario} />
+            </div>
+          )}
+          <div className="flex items-start gap-5 sm:gap-8">
+            <div className="min-w-0 flex-1">
+              <HighlightText
+                text={scenario.scenario}
+                highlights={scenario.highlights}
+                active={answered}
+              />
+            </div>
+            {!answered && (
+              <div className="shrink-0 self-center text-on-surface-variant">
+                <TypeIllustration id={scenario.type} size={104} />
+              </div>
+            )}
+          </div>
         </div>
 
         {/* RIGHT — choices → fallacy breakdown */}

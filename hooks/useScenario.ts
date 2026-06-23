@@ -1,19 +1,15 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import scenariosData from "@/data/scenarios.json";
-import type { Scenario } from "@/lib/types";
-
-const defaultScenarios = scenariosData as Scenario[];
 
 /**
- * Scenario navigation over a dataset (mental models by default, or any other
- * Scenario[] such as the intelligences set). Renders scenario 0 on the server
+ * One-at-a-time navigation over any dataset (mental models, intelligences,
+ * fallacies, puzzles, or obscure facts). Renders item 0 on the server
  * (deterministic, so SSR and the first client render match), then jumps to a
- * random scenario after mount. Serves random unseen scenarios; once every
- * scenario has been seen, the seen-set resets and the loop continues forever.
+ * random item after mount. Serves random unseen items; once every item has been
+ * seen, the seen-set resets and the loop continues forever.
  */
-export function useScenario(data: Scenario[] = defaultScenarios) {
+export function useScenario<T>(data: T[]) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const seenRef = useRef<Set<number>>(new Set([0]));
   const [history, setHistory] = useState<number[]>([]);

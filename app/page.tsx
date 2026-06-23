@@ -5,7 +5,7 @@ export default function Landing() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-4 py-16 text-center">
       <div className="mx-auto flex w-full max-w-[640px] flex-col items-center">
-        <div className="glow mb-8 grid h-20 w-20 place-items-center rounded-md-xl bg-surface-container-high text-primary">
+        <div className="mb-8 grid h-20 w-20 place-items-center rounded-md-xl bg-surface-container-high text-primary">
           <BrainLogo size={44} />
         </div>
 

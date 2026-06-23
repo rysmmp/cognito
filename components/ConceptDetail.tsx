@@ -5,36 +5,22 @@ import { fadeUp } from "@/lib/motion";
 import type { Model } from "@/lib/types";
 import { ModelIcon } from "./ModelIcon";
 import { CollapsibleSection } from "./CollapsibleSection";
-import { ReadAloud } from "./ReadAloud";
-
-/** The whole framework as one spoken passage, for read-aloud. */
-function speechText(model: Model): string {
-  return [
-    `${model.name}.`,
-    model.short_definition,
-    `What it is. ${model.what_it_is}`,
-    `Why it matters. ${model.why_it_matters}`,
-    `Examples. ${model.examples.join(". ")}.`,
-    `Common misuse. ${model.common_misuse}`,
-  ].join(" ");
-}
 
 /**
  * The revealed concept, shared by every section (Models, Intelligence,
- * Fallacies, Puzzles). The lead (glyph + name + definition) appears on reveal;
- * the deeper sections are collapsibles — "What it is" opens by default, the rest
- * expand on demand. A "Read aloud" control speaks the entire framework.
+ * Fallacies, Puzzles). The lead (glyph + name + definition) appears on reveal —
+ * the animated line-art glyph draws itself in; the deeper sections are
+ * collapsibles, "What it is" open by default.
  */
 export function ConceptDetail({ id, model }: { id: string; model: Model }) {
   return (
     <div className="w-full">
       <motion.div variants={fadeUp} initial="hidden" animate="visible">
         <div className="mb-4 grid h-12 w-12 place-items-center rounded-md-md bg-surface-container-high text-primary">
-          <ModelIcon id={id} size={28} />
+          <ModelIcon id={id} size={28} animated />
         </div>
         <h2 className="font-sans text-headline-medium font-medium text-primary">{model.name}</h2>
         <p className="mt-3 font-sans text-body-large text-on-surface">{model.short_definition}</p>
-        <ReadAloud text={speechText(model)} />
       </motion.div>
 
       <div className="mt-6 border-t border-outline-variant">

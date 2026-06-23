@@ -466,9 +466,11 @@ interface ModelIconProps {
   className?: string;
   /** Pixel size of the square glyph. Defaults to 28. */
   size?: number;
+  /** When true, the strokes draw themselves in on mount (`.lineart-animated`). */
+  animated?: boolean;
 }
 
-export function ModelIcon({ id, className, size = 28 }: ModelIconProps) {
+export function ModelIcon({ id, className, size = 28, animated = false }: ModelIconProps) {
   return (
     <svg
       width={size}
@@ -479,7 +481,7 @@ export function ModelIcon({ id, className, size = 28 }: ModelIconProps) {
       strokeWidth={1.5}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={className}
+      className={[animated ? "lineart-animated" : "", className ?? ""].join(" ").trim() || undefined}
       aria-hidden="true"
     >
       {GLYPHS[id] ?? FALLBACK}

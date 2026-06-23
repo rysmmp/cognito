@@ -39,12 +39,6 @@ interface Pulse {
   speed: number;
 }
 
-interface Ring {
-  x: number;
-  y: number;
-  t: number; // 0–1 lifetime
-}
-
 interface Link {
   a: number;
   b: number;
@@ -52,13 +46,11 @@ interface Link {
 }
 
 /**
- * Ambient, cursor-reactive field that reads as both a constellation and a
- * neural network: glowing nodes of varied size (stars / somas) linked to nearby
- * neighbours, with signal pulses that travel along the links (firing). The
- * cursor forms bright synaptic links to nearby nodes and energises them (more
- * firing, brighter glow); clicking sends out a ripple and a burst of pulses.
- * Tinted with the M3 `--md-primary` token. Honours `prefers-reduced-motion` by
- * painting one static frame with no animation or interaction.
+ * Calm, ambient constellation field: a sparse set of drifting nodes linked to
+ * nearby neighbours, with the occasional faint signal pulse. The cursor only
+ * gently brightens and nudges nearby nodes — no synapse links or click bursts.
+ * Tinted with the `--md-primary` token. Honours `prefers-reduced-motion` by
+ * painting one static frame with no animation.
  */
 export function Particles() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -83,17 +75,16 @@ export function Particles() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const mouse = { x: -9999, y: -9999 };
 
-    const LINK = 145; // px under which nodes connect
-    const REPEL = 110; // px radius of the cursor's gentle push
-    const CURSOR_LINK = 200; // px reach of synaptic links to the cursor
-    const MAX_PULSES = 90;
+    const LINK = 140; // px under which nodes connect
+    const REPEL = 70; // px radius of the cursor's gentle push
+    const CURSOR_LINK = 130; // px reach of the cursor's influence
+    const MAX_PULSES = 20;
 
     let width = 0;
     let height = 0;
     let nodes: Node[] = [];
     let links: Link[] = [];
     const pulses: Pulse[] = [];
-    const rings: Ring[] = [];
     let raf = 0;
 
     function resize() {
@@ -105,12 +96,12 @@ export function Particles() {
       canvas!.style.height = `${height}px`;
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // Density scales with viewport area, clamped for performance.
+      // Sparse density — a calm field, not a busy one.
       const count = Math.round(
-        Math.min(120, Math.max(45, (width * height) / 19000)),
+        Math.min(45, Math.max(16, (width * height) / 45000)),
       );
       nodes = Array.from({ length: count }, () => {
-        const bright = Math.random() < 0.22;
+        const bright = Math.random() < 0.16;
         return {
           x: Math.random() * width,
           y: Math.random() * height,
@@ -132,14 +123,6 @@ export function Particles() {
     function fire(i: number, j: number) {
       if (pulses.length >= MAX_PULSES) return;
       pulses.push({ i, j, t: 0, speed: 0.012 + Math.random() * 0.022 });
-    }
-
-    /** A random neighbour of node i within the current link set. */
-    function neighbourOf(i: number): number {
-      const opts = links.filter((l) => l.a === i || l.b === i);
-      if (!opts.length) return -1;
-      const l = opts[(Math.random() * opts.length) | 0];
-      return l.a === i ? l.b : l.a;
     }
 
     function update() {
@@ -187,28 +170,16 @@ export function Particles() {
         }
       }
 
-      // Ambient firing along a random link.
-      if (links.length && Math.random() < 0.08) {
+      // Occasional ambient firing along a random link.
+      if (links.length && Math.random() < 0.02) {
         const l = links[(Math.random() * links.length) | 0];
         fire(l.a, l.b);
-      }
-      // Energised nodes (near the cursor) fire more often.
-      for (let i = 0; i < nodes.length; i++) {
-        if (nodes[i].energy > 0.35 && Math.random() < nodes[i].energy * 0.05) {
-          const j = neighbourOf(i);
-          if (j >= 0) fire(i, j);
-        }
       }
 
       // Advance pulses; drop finished ones.
       for (let k = pulses.length - 1; k >= 0; k--) {
         pulses[k].t += pulses[k].speed;
         if (pulses[k].t >= 1) pulses.splice(k, 1);
-      }
-      // Advance rings.
-      for (let k = rings.length - 1; k >= 0; k--) {
-        rings[k].t += 0.025;
-        if (rings[k].t >= 1) rings.splice(k, 1);
       }
     }
 
@@ -227,23 +198,6 @@ export function Particles() {
         ctx!.strokeStyle = `rgba(${e > 0.15 ? lit : rgb}, ${alpha})`;
         ctx!.lineWidth = 1;
         ctx!.stroke();
-      }
-
-      // Synaptic links from the cursor to nearby nodes.
-      if (mouse.x > -9999) {
-        for (const p of nodes) {
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < CURSOR_LINK) {
-            ctx!.beginPath();
-            ctx!.moveTo(mouse.x, mouse.y);
-            ctx!.lineTo(p.x, p.y);
-            ctx!.strokeStyle = `rgba(${lit}, ${(1 - dist / CURSOR_LINK) * 0.28})`;
-            ctx!.lineWidth = 1;
-            ctx!.stroke();
-          }
-        }
       }
 
       // Nodes (stars / somas) with a soft halo when bright or energised.
@@ -279,15 +233,6 @@ export function Particles() {
         ctx!.fillStyle = `rgba(${lit}, ${0.95 * fade})`;
         ctx!.fill();
       }
-
-      // Click ripples.
-      for (const ring of rings) {
-        ctx!.beginPath();
-        ctx!.arc(ring.x, ring.y, ring.t * CURSOR_LINK, 0, Math.PI * 2);
-        ctx!.strokeStyle = `rgba(${lit}, ${(1 - ring.t) * 0.3})`;
-        ctx!.lineWidth = 1.5;
-        ctx!.stroke();
-      }
     }
 
     function loop() {
@@ -304,19 +249,6 @@ export function Particles() {
       mouse.x = -9999;
       mouse.y = -9999;
     };
-    const onDown = (e: MouseEvent) => {
-      rings.push({ x: e.clientX, y: e.clientY, t: 0 });
-      // Burst: fire from the nodes nearest the click.
-      for (let i = 0; i < nodes.length; i++) {
-        const dx = nodes[i].x - e.clientX;
-        const dy = nodes[i].y - e.clientY;
-        if (dx * dx + dy * dy < 150 * 150) {
-          nodes[i].energy = 1;
-          const j = neighbourOf(i);
-          if (j >= 0) fire(i, j);
-        }
-      }
-    };
 
     resize();
     if (reduceMotion) {
@@ -326,7 +258,6 @@ export function Particles() {
       window.addEventListener("resize", resize);
       window.addEventListener("mousemove", onMove);
       window.addEventListener("mouseout", onLeave);
-      window.addEventListener("mousedown", onDown);
       loop();
     }
 
@@ -335,7 +266,6 @@ export function Particles() {
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseout", onLeave);
-      window.removeEventListener("mousedown", onDown);
     };
   }, []);
 

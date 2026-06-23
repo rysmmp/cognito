@@ -36,7 +36,7 @@ export function CardActions({
         <button
           type="button"
           onClick={onNext}
-          className="md-state relative inline-flex h-10 w-full items-center justify-center gap-2 overflow-hidden rounded-md-full bg-primary-container px-6 font-sans text-label-large font-medium text-on-primary-container shadow-[0_6px_24px_-10px_rgba(255,255,255,0.3)] transition-[background-color,box-shadow] duration-150 ease-md-standard"
+          className="md-state relative inline-flex h-10 w-full items-center justify-center gap-2 overflow-hidden rounded-md-full bg-primary-container px-6 font-sans text-label-large font-medium text-on-primary-container transition-colors duration-150 ease-md-standard"
         >
           <Ripple />
           <span className="relative z-[1] inline-flex items-center gap-2">
